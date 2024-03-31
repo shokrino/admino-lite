@@ -1,0 +1,96 @@
+:root  {
+    --var-admino-lite-color-main: #8b70cd !important;
+}
+body.login .language-switcher {
+    width: 100% !important;
+}
+#login {
+    background: white;
+    padding: 30px 25px !important;
+    min-width: 400px !important;
+    border-radius: 25px !important;
+    height: fit-content !important;
+}
+#loginform, #registerform, #lostpasswordform {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 5px;
+}
+#loginform, #registerform, #lostpasswordform, #nav, #backtoblog {
+    max-width: 350px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+acktoblog {
+    margin-bottom: 0;
+}
+#wp-submit {
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    padding: 0px 22px;
+}
+#wp-submit:hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary.active, .wp-core-ui .button-primary.active:focus, .wp-core-ui .button-primary:active {
+    background-color: white;
+    color: var(--var-admino-lite-color-main);
+    box-shadow: none !important;
+}
+.forgetmenot {
+    margin: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login h1 {
+    margin: 0 92px;
+}
+#user_login:focus, #user_email:focus, #user_pass:focus, .input:focus, .password-input:focus, .login input[type="text"]:focus, input:focus {
+    border: 2px solid var(--var-admino-lite-color-main);
+}
+#user_login, #user_email, #user_pass, .input, .password-input, .login input[type="text"] {
+    border-radius: 12px;
+    border: none !important;
+    box-shadow: 0px 2px 20px -12px #0000005e;
+    margin-top: 2px;
+}
+.login #login_error, .login .message, .login .success {
+    border: 3px solid #46bdd9;
+    padding: 12px;
+    margin-right: 0;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    word-wrap: break-word;
+    border-radius: 10px;
+}
+body.login {
+    background-image: url(http://localhost/u/wp-content/plugins/Admino/inc/admino-redux/templates/panel/img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    float: right;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+ }
+.wp-core-ui .button, .wp-core-ui .button-secondary .dashicons:before {
+    color: var(--var-admino-lite-color-main);
+}
+.wp-core-ui .button-primary {
+    background: var(--var-admino-lite-color-main);
+    color: #FFFFFF;
+}
+.login form input[type="checkbox"]::before{
+    background: #fff;
+}
+.login .button.wp-hide-pw {
+    border-radius: 12px;
+    box-shadow: none !important;
+    border: none !important;
+}
+#rememberme {
+    border: 1px solid #81818154 !important;
+    box-shadow: none !important;
+}

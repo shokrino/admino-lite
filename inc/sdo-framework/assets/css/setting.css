@@ -1,0 +1,361 @@
+:root {
+    --sdo-main-color: #2c77de;
+    --sdo-main-font: "roboto";
+}
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.flex-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.flex-center-in-col {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.relative {
+    position: relative;
+}
+.sdo-header {
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 14px -10px #00000070;
+}
+.sdo-section {
+    flex-wrap: wrap;
+    padding: 3%;
+    background: white;
+    border-radius: 25px;
+    min-height: 600px;
+    flex-direction: row-reverse;
+    font-family: var(--sdo-main-font) !important;
+}
+.sdo-section.rtl {
+    flex-direction: row;
+}
+.sdo-section .tab {
+    width: 30%;
+    height: max-content;
+}
+.sdo-section .tab-information {
+    padding: 25px;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.sdo-section .tab-information > img {
+    width: 160px;
+    height: auto;
+}
+.sdo-section .tablinks {
+    background-color: transparent;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: right;
+    cursor: pointer;
+    transition: 0s;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 25px;
+    border-right: 3px solid transparent;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+.sdo-section .tabcontent {
+    padding: 5px 20px;
+    border-right: 3px solid var(--sdo-main-color);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+}
+.sdo-section .tabcontent:not(:first-child) {
+    display: none;
+}
+.sdo-section .tab button.active,
+.sdo-section .tab button:hover {
+    border-right: 3px solid var(--sdo-main-color);
+    transition: 200ms;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    box-shadow: -5px 3px 11px -2px #36454f0d;
+}
+.sdo-section .tab button.active svg,.sdo-section .tab button:hover svg {
+    stroke: var(--sdo-main-color);
+}
+.sdo-tab-titles-box {
+    display: flex;
+    justify-content: right;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+}
+.sdo-title-tab-options {
+    font-size: 17px;
+    font-weight: 600;
+    color: #36454f;
+}
+.sdo-tab-content-outer {
+    min-height: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.sdo-options-save-box {
+    display: flex;
+    justify-content: end;
+    padding: 0 3%;
+}
+.sdo-options-save-box .submit-sdo {
+    display: flex;
+    background: var(--sdo-main-color);
+    border: 2px solid transparent;
+    border-radius: 9px;
+    padding: 8px 25px 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.sdo-box-option {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.sdo-form-label {
+    font-weight: bold;
+    display: inline-block;
+    color: #333;
+    font-size: .875rem;
+}
+.sdo-section input[type="date"], .sdo-section input[type="datetime-local"], .sdo-section input[type="datetime"], .sdo-section input[type="email"], .sdo-section input[type="month"], .sdo-section input[type="number"], .sdo-section input[type="password"], .sdo-section input[type="search"], .sdo-section input[type="tel"], .sdo-section input[type="text"], .sdo-section input[type="time"], .sdo-section input[type="url"], .sdo-section input[type="week"] {
+    height: 40px;
+    vertical-align: middle;
+    display: inline-block;
+    max-width: 100%;
+    width: 100%;
+    border: 0 none;
+    padding: 0 10px;
+    background: #fff;
+    background-color: rgb(255, 255, 255);
+    color: #666;
+    border: 1px solid #e5e5e5;
+    transition: .2s ease-in-out;
+    transition-property: all;
+    transition-property: color,background-color,border;
+    overflow: visible;
+    border-radius: 7px !important;
+    font-family: var(--sdo-main-font) !important;
+}
+.sdo-section input[type="date"]:focus, .sdo-section input[type="datetime-local"]:focus, .sdo-section input[type="datetime"]:focus, .sdo-section input[type="email"]:focus, .sdo-section input[type="month"]:focus, .sdo-section input[type="number"]:focus, .sdo-section input[type="password"]:focus, .sdo-section input[type="search"]:focus, .sdo-section input[type="tel"]:focus, .sdo-section input[type="text"]:focus, .sdo-section input[type="time"]:focus, .sdo-section input[type="url"]:focus, .sdo-section input[type="week"]:focus {
+    border-color: var(--sdo-main-color);
+}
+.sdo-box-option > p {
+    margin-top: 0 !important;
+}
+.sdo-button-set-box {
+    border: 2px solid var(--sdo-main-color);
+    width: fit-content;
+    flex: 1;
+    border-radius: 8px;
+    gap: 10px;
+}
+.sdo-radio {
+    display: none !important;
+}
+.sdo-button-label {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    padding: 8px 14px;
+    text-align: center;
+}
+.sdo-radio.button-set:checked + .sdo-button-label {
+    border-radius: 6px;
+    background: var(--sdo-main-color);
+    color: white;
+    transform: scale(1.15);
+    line-height: 1;
+    align-items: center;
+    transition: .15s background-color ease-in-out;
+}
+.sdo-switch-box {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+.sdo-switch-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 12.5px;
+    transition: background-color 0.3s;
+}
+.sdo-switch-checkbox:checked + .sdo-switch-label {
+    background-color: var(--sdo-main-color);
+}
+.sdo-switch-label:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2.5px;
+    left: 2.5px;
+    transition: transform 0.3s;
+}
+.sdo-switch-checkbox:checked + .sdo-switch-label:after {
+    transform: translateX(25px);
+}
+#sdo.loading .loading-spinner-sdo {
+    display: flex;
+}
+.loading-spinner-sdo {
+    position: fixed;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    height: 100%;
+    z-index: 99999999;
+    background: #25273275;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(3px);
+}
+.loading-spinner-sdo > svg {
+    max-width: 135px;
+    color: #fff;
+}
+.error-text {
+    color: #b52230;
+    padding: 8px 10px;
+    text-align: center;
+    background: #f8d7da;
+    font-weight: 600;
+    display: none;
+    font-size: 15px;
+    border-radius: 8px;
+}
+.success-text {
+    color: #427e1b;
+    padding: 8px 10px;
+    text-align: center;
+    background: #dff8d7;
+    border: 1px solid #d1f5c6;
+    font-weight: 600;
+    display: none;
+    font-size: 15px;
+    border-radius: 8px;
+}
+.sdo-repeater-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+.sdo-repeater-item {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    justify-content: space-between;
+}
+.sdo-repeater-seperate-subfields {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.sdo-repeater-seperate-subbuttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.sdo-remove-repeater-item {
+    background: transparent;
+    border: 2px solid #f00;
+    display: flex;
+    padding: 5px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f00;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#sdo svg {
+    pointer-events: none;
+}
+.sdo-add-repeater-item {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid var(--sdo-main-color);
+    cursor: pointer;
+    margin-right: 20px;
+}
+.sdo-box-image-field {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.sdo-image-preview {
+    max-height: 100px;
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
+    min-width: 100px;
+    height: 100px;
+}
+.inner-image-box-sdo {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+.inner-image-box-sdo p {
+    margin: 0 0 1em;
+}
+.upload-image-button {
+    background: var(--sdo-main-color);
+    border: 2px solid transparent;
+    border-radius: 9px;
+    padding: 6px 12px;
+    color: white;
+    cursor: pointer;
+}
