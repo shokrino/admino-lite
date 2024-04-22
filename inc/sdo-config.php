@@ -6,6 +6,7 @@
 function admnl_options($field) {
     return sdo_option('admnl_option',$field);
 }
+define('SDO_TEXTDOMAIN', ADMNL_TEXTDOMAIN);
 
 SDO::set_config('admnl_option',array(
     'dev_title' => 'تنظیمات ادمینو لایت',
