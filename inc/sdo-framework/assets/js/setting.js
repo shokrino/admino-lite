@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Elements with class .tabcontent or .tablinks not found.");
     }
     //form ajax
-    let SDO = document.getElementById('sdo');
-    let form = document.getElementById('save-options-sdo');
+    let SHKOF = document.getElementById('shkof');
+    let form = document.getElementById('save-options-shkof');
     let errorText = form.querySelector('.error-text');
     let successText = form.querySelector('.success-text');
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-        SDO.classList.add('loading');
+        SHKOF.classList.add('loading');
         errorText.style.display = 'none';
         successText.style.display = 'none';
         let formData = new FormData(form);
@@ -25,22 +25,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 formData.set(checkboxName, 'off');
             }
         });
-        let repeaterFields = document.querySelectorAll('.sdo-repeater-field[data-repeater-name]');
+        let repeaterFields = document.querySelectorAll('.shkof-repeater-field[data-repeater-name]');
         repeaterFields.forEach(repeaterField => {
             let repeaterName = repeaterField.getAttribute('data-repeater-name');
             let repeaterValues = collectRepeaterValues(repeaterField);
             formData.append(repeaterName, repeaterValues);
             console.log(repeaterValues);
         });
-        formData.append('action', 'save_sdo_data');
-        formData.append('security', data_sdo.nonce);
+        formData.append('action', 'save_shkof_data');
+        formData.append('security', data_shkof.nonce);
         let xhr = new XMLHttpRequest();
-        xhr.open('POST', data_sdo.ajax_url, true);
+        xhr.open('POST', data_shkof.ajax_url, true);
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.onload = function () {
             let response = JSON.parse(xhr.responseText);
             if (xhr.status === 200) {
-                SDO.classList.remove('loading');
+                SHKOF.classList.remove('loading');
                 if (response.success == true) {
                     successText.textContent = response.data.message;
                     successText.style.display = 'block';
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
         xhr.send(formData);
     });
     function collectRepeaterValues(repeaterField) {
-        let repeaterItems = repeaterField.querySelectorAll('.sdo-repeater-item');
+        let repeaterItems = repeaterField.querySelectorAll('.shkof-repeater-item');
         let mainArray = [];
         repeaterItems.forEach((repeaterItem, index) => {
             let subArray = {};
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return params.toString();
     }
 });
-function openTabSDO(evt, tabName) {
+function openTabSHKOF(evt, tabName) {
     let i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -97,7 +97,7 @@ function openTabSDO(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 document.addEventListener("DOMContentLoaded", function () {
-    const fields = Array.from(document.querySelectorAll('.sdo-box-option'));
+    const fields = Array.from(document.querySelectorAll('.shkof-box-option'));
     const fieldsWithRequire = Array.from(document.querySelectorAll('[data-require-0]'));
     function checkConditions(field,operator,requiredValue) {
         let requiredField = document.getElementById(field);
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     function updateConditionalOptionsDisplay() {
-        const conditionalOptions = Array.from(document.querySelectorAll('.sdo-conditional-option'));
+        const conditionalOptions = Array.from(document.querySelectorAll('.shkof-conditional-option'));
         conditionalOptions.forEach(option => {
             const attributeValue = option.getAttribute('display');
             if (attributeValue === 'true') {
@@ -164,12 +164,12 @@ document.addEventListener("DOMContentLoaded", function () {
     updateOnLoadAndChange();
     fields.forEach(input => input.addEventListener('change', updateOnLoadAndChange));
     document.addEventListener('click', function (event) {
-        if (event.target.classList.contains('sdo-add-repeater-item')) {
+        if (event.target.classList.contains('shkof-add-repeater-item')) {
             event.preventDefault();
-            let repeaterContainer = event.target.closest('.sdo-repeater-field').querySelector('.sdo-repeater-container');
-            let template = repeaterContainer.querySelector('.sdo-repeater-item');
+            let repeaterContainer = event.target.closest('.shkof-repeater-field').querySelector('.shkof-repeater-container');
+            let template = repeaterContainer.querySelector('.shkof-repeater-item');
             if (template) {
-                let index = repeaterContainer.querySelectorAll('.sdo-repeater-item').length;
+                let index = repeaterContainer.querySelectorAll('.shkof-repeater-item').length;
                 let newItem = template.cloneNode(true);
                 newItem.querySelectorAll('input, textarea, select').forEach(function (input) {
                     let idParts = input.id.split('_');
@@ -185,17 +185,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 repeaterContainer.appendChild(newItem);
             } else {
                 let newItem = document.createElement('div');
-                newItem.classList.add('sdo-repeater-item');
+                newItem.classList.add('shkof-repeater-item');
                 newItem.innerHTML = '<input type="text" name="new-field" value="">';
                 repeaterContainer.appendChild(newItem);
             }
         }
-        if (event.target.classList.contains('sdo-remove-repeater-item')) {
+        if (event.target.classList.contains('shkof-remove-repeater-item')) {
             event.preventDefault();
-            let repeaterContainer = event.target.closest('.sdo-repeater-field').querySelector('.sdo-repeater-container');
-            let repeaterItems = repeaterContainer.querySelectorAll('.sdo-repeater-item');
+            let repeaterContainer = event.target.closest('.shkof-repeater-field').querySelector('.shkof-repeater-container');
+            let repeaterItems = repeaterContainer.querySelectorAll('.shkof-repeater-item');
             if (repeaterItems.length > 1) {
-                event.target.closest('.sdo-repeater-item').remove();
+                event.target.closest('.shkof-repeater-item').remove();
             }
         }
     });
@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
             fileFrames[identifier].open();
         });
     });
-    let colorField = document.querySelectorAll('.sdo-color-selector');
+    let colorField = document.querySelectorAll('.shkof-color-selector');
     if (colorField) {
         let colorPicker = new wp.ColorPicker(colorField);
     }

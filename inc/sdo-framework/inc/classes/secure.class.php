@@ -1,4 +1,4 @@
-<?php defined( 'SDOPATH' ) || exit;
+<?php defined( 'SHKOFPATH' ) || exit;
 /**
  * Secure Class
  *
@@ -6,8 +6,8 @@
  * @since 1.0.0
  *
  */
-if (!class_exists('SDO_Secure')) {
-    class SDO_Secure {
+if (!class_exists('SHKOF_Secure')) {
+    class SHKOF_Secure {
         private $secretKey;
         public function __construct() {
             $this->secretKey = $this->generateSecretKey(64);

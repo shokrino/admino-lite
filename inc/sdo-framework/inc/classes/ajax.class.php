@@ -1,4 +1,4 @@
-<?php defined( 'SDOPATH' ) || exit;
+<?php defined( 'SHKOFPATH' ) || exit;
 /**
  * AJAS Class
  *
@@ -6,14 +6,14 @@
  * @since 1.0.0
  *
  */
-if (!class_exists('SDO_Ajax_Handler')) {
-    class SDO_Ajax_Handler {
+if (!class_exists('SHKOF_Ajax_Handler')) {
+    class SHKOF_Ajax_Handler {
         public function __construct() {
-            add_action('wp_ajax_save_sdo_data', [$this, 'save_sdo_data']);
-            add_action('wp_ajax_nopriv_save_sdo_data', [$this, 'save_sdo_data']);
+            add_action('wp_ajax_save_shkof_data', [$this, 'save_shkof_data']);
+            add_action('wp_ajax_nopriv_save_shkof_data', [$this, 'save_shkof_data']);
         }
-        public static function save_sdo_data() {
-            check_ajax_referer('sdo_nonce', 'security');
+        public static function save_shkof_data() {
+            check_ajax_referer('shkof_nonce', 'security');
             $dev_name = sanitize_text_field($_POST['dev_name']);
             $data = $_POST;
             if (isset($dev_name) && isset($data) && is_array($data)) {
@@ -37,16 +37,16 @@ if (!class_exists('SDO_Ajax_Handler')) {
                         }
                     }
                     self::save_data($dev_name, $data_to_save);
-                    wp_send_json_success(array('message' => __('Data saved successfully!'),SDO_TEXTDOMAIN));
+                    wp_send_json_success(array('message' => __('Data saved successfully!'),SHKOF_TEXTDOMAIN));
                 } else {
-                    wp_send_json_error(array('message' => __('Invalid dev name!',SDO_TEXTDOMAIN)));
+                    wp_send_json_error(array('message' => __('Invalid dev name!',SHKOF_TEXTDOMAIN)));
                 }
             } else {
-                wp_send_json_error(array('message' => __('Invalid data received!',SDO_TEXTDOMAIN)));
+                wp_send_json_error(array('message' => __('Invalid data received!',SHKOF_TEXTDOMAIN)));
             }
         }
         public static function get_field_ids_for_dev_name($dev_name) {
-            $tabs = SDO::$tabs;
+            $tabs = SHKOF::$tabs;
             $fieldIds = [];
             if (isset($tabs[$dev_name]) && is_array($tabs[$dev_name])) {
                 foreach ($tabs[$dev_name] as $tab) {
@@ -74,5 +74,5 @@ if (!class_exists('SDO_Ajax_Handler')) {
 //            delete_option($dev_name);
         }
     }
-    new SDO_Ajax_Handler;
+    new SHKOF_Ajax_Handler;
 }

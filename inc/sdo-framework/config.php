@@ -1,4 +1,4 @@
-<?php defined( 'SDOPATH' ) || exit;
+<?php defined( 'SHKOFPATH' ) || exit;
 /**
- * Config SDO framework
+ * Config SHKOF framework
  */
