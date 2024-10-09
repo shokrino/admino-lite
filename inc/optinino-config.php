@@ -1,14 +1,14 @@
-<?php defined( 'SHKOFPATH' ) || exit;
+<?php defined( 'ABSPATH' ) || exit;
 /**
- * Config SHKOF framework
+ * Config Optionino framework
  * آموزش برنامه نویسی مشابه همین پلاگین در سایت شکرینو
  */
 function admnl_options($field) {
-    return shkof_option('admnl_option',$field);
+    return optionino_get('admnl_option',$field);
 }
-define('SHKOF_TEXTDOMAIN', ADMNL_TEXTDOMAIN);
+define('OPTNNO_TEXTDOMAIN', ADMNL_TEXTDOMAIN);
 
-SHKOF::set_config('admnl_option',array(
+OPTNNO::set_config('admnl_option',array(
     'dev_title' => 'تنظیمات ادمینو لایت',
     'dev_version' => ADMNL_VERSION,
     'logo_url' => ADMNL_ASSETS.'/img/admino-type.png',
@@ -25,7 +25,7 @@ SHKOF::set_config('admnl_option',array(
     'admin_bar_icon' => 'dashicons-menu',
 ));
 
-SHKOF::set_tab('admnl_option',array(
+OPTNNO::set_tab('admnl_option',array(
     'id' => 'general_settings',
     'title' => 'تنظمیات عمومی',
     'desc' => 'آپشن هایی که در تمامی بخش ها مشترک هستند',

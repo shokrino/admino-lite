@@ -1,19 +1,19 @@
-<?php defined( 'SHKOFPATH' ) || exit;
+<?php defined( 'ABSPATH' ) || exit;
 /**
- * AJAS Class
+ * AJAX Class for Optionino Framework
  *
  * @version 1.0.0
  * @since 1.0.0
  *
  */
-if (!class_exists('SHKOF_Ajax_Handler')) {
-    class SHKOF_Ajax_Handler {
+if (!class_exists('OPTNNO_Ajax_Handler')) {
+    class OPTNNO_Ajax_Handler {
         public function __construct() {
-            add_action('wp_ajax_save_shkof_data', [$this, 'save_shkof_data']);
-            add_action('wp_ajax_nopriv_save_shkof_data', [$this, 'save_shkof_data']);
+            add_action('wp_ajax_save_optionino_data', [$this, 'save_optionino_data']);
+            add_action('wp_ajax_nopriv_save_optionino_data', [$this, 'save_optionino_data']);
         }
-        public static function save_shkof_data() {
-            check_ajax_referer('shkof_nonce', 'security');
+        public static function save_optionino_data() {
+            check_ajax_referer('optionino_nonce', 'security');
             $dev_name = sanitize_text_field($_POST['dev_name']);
             $data = $_POST;
             if (isset($dev_name) && isset($data) && is_array($data)) {
@@ -37,16 +37,16 @@ if (!class_exists('SHKOF_Ajax_Handler')) {
                         }
                     }
                     self::save_data($dev_name, $data_to_save);
-                    wp_send_json_success(array('message' => __('Data saved successfully!'),SHKOF_TEXTDOMAIN));
+                    wp_send_json_success(array('message' => __('Data saved successfully!', 'admino-lite')));
                 } else {
-                    wp_send_json_error(array('message' => __('Invalid dev name!',SHKOF_TEXTDOMAIN)));
+                    wp_send_json_error(array('message' => __('Invalid dev name!','admino-lite')));
                 }
             } else {
-                wp_send_json_error(array('message' => __('Invalid data received!',SHKOF_TEXTDOMAIN)));
+                wp_send_json_error(array('message' => __('Invalid data received!','admino-lite')));
             }
         }
         public static function get_field_ids_for_dev_name($dev_name) {
-            $tabs = SHKOF::$tabs;
+            $tabs = OPTNNO::$tabs;
             $fieldIds = [];
             if (isset($tabs[$dev_name]) && is_array($tabs[$dev_name])) {
                 foreach ($tabs[$dev_name] as $tab) {
@@ -74,5 +74,5 @@ if (!class_exists('SHKOF_Ajax_Handler')) {
 //            delete_option($dev_name);
         }
     }
-    new SHKOF_Ajax_Handler;
+    new OPTNNO_Ajax_Handler;
 }

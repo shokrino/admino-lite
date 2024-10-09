@@ -6,6 +6,8 @@ Description: The easiest , The best and fastest way to make WordPress admin pane
 Author:      Shokrino
 Author URI:  https://shokrino.com/admino-plugin/
 Version:     1.0.0
+License: GPL-2.0-or-later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Textdomain:  admino-l
 آموزش برنامه نویسی مشابه همین پلاگین در سایت شکرینو
 */
@@ -28,8 +30,8 @@ define('ADMNL_TEXTDOMAIN' , 'admino-l');
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-require_once 'inc/sdo-framework/sdo-framework.php';
-require_once 'inc/sdo-config.php';
+require_once 'inc/optionino-framework/optionino-framework.php';
+require_once 'inc/optinino-config.php';
 
 function adminol_load_textdomain() {
     load_plugin_textdomain( 'admino-l', false, basename( dirname( __FILE__ ) ) . '/languages/' );
