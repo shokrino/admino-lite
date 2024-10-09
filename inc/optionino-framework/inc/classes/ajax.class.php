@@ -14,7 +14,11 @@ if (!class_exists('OPTNNO_Ajax_Handler')) {
         }
         public static function save_optionino_data() {
             check_ajax_referer('optionino_nonce', 'security');
-            $dev_name = sanitize_text_field($_POST['dev_name']);
+            if (isset($_POST['dev_name'])) {
+                $dev_name = sanitize_text_field(wp_unslash($_POST['dev_name']));
+            } else {
+                return false;
+            }
             $data = $_POST;
             if (isset($dev_name) && isset($data) && is_array($data)) {
                 $field_ids = self::get_field_ids_for_dev_name($dev_name);

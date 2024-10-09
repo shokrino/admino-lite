@@ -20,7 +20,7 @@ if (!class_exists('OPTNNO')) {
             add_action('admin_menu', [$this,'create_menu']);
             add_action( 'init', [$this,'optionino_load_textdomain'] );
         }
-        
+
         public static function setup() {
 
         }
@@ -29,7 +29,7 @@ if (!class_exists('OPTNNO')) {
                 if ($existing_config['dev_name'] === $dev_name) {
                     add_action('admin_notices', function() use ($dev_name) {
                         // translators: %s is the ID of the configuration that caused the error.
-                        echo '<div class="error"><p>' . sprintf(__('Configuration with ID "%s" is already in use. Please use a unique ID.','admino-lite'), esc_html($dev_name)) . '</p></div>';
+                        echo '<div class="error"><p>' . sprintf(esc_html__('Configuration with ID "%s" is already in use. Please use a unique ID.','admino-lite'), esc_html($dev_name)) . '</p></div>';
                     });
                     return;
                 }
@@ -45,7 +45,7 @@ if (!class_exists('OPTNNO')) {
                 if ($existing_tab['id'] === $tab_settings['id']) {
                     add_action('admin_notices', function() use ($tab_settings) {
                         // translators: %s is the ID of the tab that caused the error.
-                        echo '<div class="error"><p>' . sprintf(__('Tab ID "%s" is already in use. Please use a unique ID.','admino-lite'), esc_html($tab_settings['id'])) . '</p></div>';
+                        echo '<div class="error"><p>' . sprintf(esc_html__('Tab ID "%s" is already in use. Please use a unique ID.','admino-lite'), esc_html($tab_settings['id'])) . '</p></div>';
                     });
                     return;
                 }
@@ -72,7 +72,7 @@ if (!class_exists('OPTNNO')) {
                     if (in_array($fieldId, $existingFieldIds) || is_id_duplicate_optionino($tabFieldIds, $fieldId)) {
                         add_action('admin_notices', function() use ($fieldId, $tab) {
                             // translators: %s is the ID of the field that caused the error.
-                            echo '<div class="error"><p>' . sprintf(__('Field ID "%s" is already in use. Please use a unique ID.','admino-lite'), esc_html($fieldId)) . '</p></div>';
+                            echo '<div class="error"><p>' . sprintf(esc_html__('Field ID "%s" is already in use. Please use a unique ID.','admino-lite'), esc_html($fieldId)) . '</p></div>';
                         });
                         return;
                     }
@@ -139,7 +139,7 @@ if (!class_exists('OPTNNO')) {
             add_filter( 'admin_footer_text', [$this,'admin_footer_text'] );
         }
         public function admin_footer_text() {
-            _e('Powered by <a href="http://shokrino.com/" target="_blank">ShokrinoDevOptions Framework</a>', 'admino-lite');
+            esc_html_e('Powered by <a href="http://shokrino.com/" target="_blank">ShokrinoDevOptions Framework</a>', 'admino-lite');
         }
         public function optionino_load_textdomain() {
             load_plugin_textdomain( OPTNNO_TEXTDOMAIN, false,basename( OPTNNO_PATH ) . '/languages/' );
@@ -153,8 +153,8 @@ if (!class_exists('OPTNNO')) {
             }
             wp_enqueue_style('wp-color-picker');
             wp_enqueue_script('wp-color-picker');
-            wp_enqueue_style( 'optionino-settings-page', OPTNNO_ASSETS.'css/setting.css', array(), false, 'all');
-            wp_enqueue_script( 'optionino-settings-page', OPTNNO_ASSETS.'js/setting.js' , array() , false , true);
+            wp_enqueue_style( 'optionino-settings-page', OPTNNO_ASSETS.'css/setting.css', array() , OPTNNO_VERSION , 'all');
+            wp_enqueue_script( 'optionino-settings-page', OPTNNO_ASSETS.'js/setting.js' , array() , OPTNNO_VERSION  , true);
             wp_localize_script( 'optionino-settings-page', 'data_optionino', array(
                 'ajax_url' => admin_url( 'admin-ajax.php' ),
                 'nonce' => wp_create_nonce('optionino_nonce')

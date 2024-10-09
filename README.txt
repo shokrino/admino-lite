@@ -1,4 +1,4 @@
-=== Admino ===
+=== Admino Lite ===
 Contributors: shokrino
 Donate link: https://shokrino.com/admino-plugin/
 Tags: styles for wp-admin and login page, simple and lite , persian font for wp-admin

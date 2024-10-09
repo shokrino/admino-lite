@@ -95,28 +95,3 @@ OPTNNO::set_tab('admnl_option',array(
         ),
     ),
 ));
-
-function admnl_add_admin_notice() {
-    if (isset($_GET['page']) && $_GET['page'] === 'admnl_option_settings') {
-        ?>
-        <div class="notice notice-info">
-            <h2>آپدیت ادمینو</h2>
-            <p>پیشنهادات خودتون برای ارتقا ادمینو را در پیج اعلام کنید تا در آپدیت ها اضافه شود</p>
-            <p>برای دریافت نسخه های جدیدتر این افزونه پیج اینستاگرام شکرینو را فالو داشته باشید (@shokrino.wp)</p>
-        </div>
-        <?php
-    }
-}
-add_action('admin_notices', 'admnl_add_admin_notice');
-
-function admnl_add_admin_notice2() {
-    if (isset($_GET['page']) && $_GET['page'] === 'admnl_option_settings') {
-        ?>
-        <div class="notice notice-info is-dismissible">
-            <h2>آموزش رایگان طراحی سایت و برنامه نویسی قالب و افزونه وردپرسی </h2>
-            <a href="https://shokrino.com">در شکرینو آکادمی</a>
-        </div>
-        <?php
-    }
-}
-add_action('admin_notices', 'admnl_add_admin_notice2');

@@ -2,7 +2,7 @@
 /*
 Plugin Name: Admino Lite
 Plugin URI:  https://shokrino.com/admino-plugin/
-Description: The easiest , The best and fastest way to make WordPress admin panel and login page beautiful!
+Description: The easiest, the best and fastest way to make WordPress admin panel and login page beautiful!
 Author:      Shokrino
 Author URI:  https://shokrino.com/admino-plugin/
 Version:     1.0.0
@@ -19,14 +19,14 @@ $plugin_version = $plugin_data['Version'];
 $plugin_name = $plugin_data_name['Plugin Name'];
 define('ADMNL_NAME', $plugin_name);
 define('ADMNL_VERSION', $plugin_version);
-define('ADMNL_PATH' , WP_CONTENT_DIR.'/plugins/admino-lite');
-define('ADMNL_URL' , plugin_dir_url( __DIR__ ).'admino-lite');
-define('ADMNL_INC' , ADMNL_PATH.'/inc');
-define('ADMNL_LIB' , ADMNL_PATH.'/inc/lib');
-define('ADMNL_TPL' , ADMNL_PATH.'/inc/templates');
-define('ADMNL_ASSETS' , ADMNL_URL.'/assets');
-define('ADMNL_FONTS' , ADMNL_ASSETS.'/fonts');
-define('ADMNL_TEXTDOMAIN' , 'admino-l');
+define('ADMNL_PATH', WP_CONTENT_DIR.'/plugins/admino-lite');
+define('ADMNL_URL', plugin_dir_url(__DIR__). 'admino-lite');
+define('ADMNL_INC', ADMNL_PATH.'/inc');
+define('ADMNL_LIB', ADMNL_PATH.'/inc/lib');
+define('ADMNL_TPL', ADMNL_PATH.'/inc/templates');
+define('ADMNL_ASSETS', ADMNL_URL.'/assets');
+define('ADMNL_FONTS', ADMNL_ASSETS.'/fonts');
+define('ADMNL_TEXTDOMAIN', 'admino-l');
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -34,31 +34,31 @@ require_once 'inc/optionino-framework/optionino-framework.php';
 require_once 'inc/optinino-config.php';
 
 function adminol_load_textdomain() {
-    load_plugin_textdomain( 'admino-l', false, basename( dirname( __FILE__ ) ) . '/languages/' );
+    load_plugin_textdomain('admino-l', false, basename(dirname(__FILE__)). '/languages/');
 }
-add_action( 'init', 'adminol_load_textdomain' );
+add_action('init', 'adminol_load_textdomain');
 
 function adminol_font_dashboard() {
-    wp_enqueue_style('general_admin_panel_font', ADMNL_ASSETS . '/css/admin-font-general.css');
-    wp_enqueue_style('custom_admin_panel_font', ADMNL_ASSETS . '/css/font-shabnam.css');
+    wp_enqueue_style('general_admin_panel_font', ADMNL_ASSETS . '/css/admin-font-general.css', array(), ADMNL_VERSION);
+    wp_enqueue_style('custom_admin_panel_font', ADMNL_ASSETS . '/css/font-shabnam.css', array(), ADMNL_VERSION);
 }
 
 function adminol_adminbar_css() {
     if (strpos(implode(' ', get_body_class()), 'admin-bar') !== false) {
-        wp_enqueue_style('custom_admin_panel_font', ADMNL_ASSETS . '/css/font-shabnam.css', array('admin-bar'));
+        wp_enqueue_style('custom_admin_panel_font', ADMNL_ASSETS . '/css/font-shabnam.css', array('admin-bar'), ADMNL_VERSION);
     }
 }
 
 function adminol_style_dashboard() {
-    wp_enqueue_style('custom_admin_panel_style', ADMNL_ASSETS . '/css/style1.css');
+    wp_enqueue_style('custom_admin_panel_style', ADMNL_ASSETS . '/css/style1.css', array(), ADMNL_VERSION);
 }
 
 function adminol_style_dashboard_head() {
-    $admin_style1_main_color = admnl_options('admin_color');
+    $admin_style1_main_color = esc_attr(admnl_options('admin_color'));
     ?>
     <style>
-        :root  {
-            --var-admino-lite-color-main: <?php echo $admin_style1_main_color; ?> !important;
+        :root {
+            --var-admino-lite-color-main: <?php echo esc_attr($admin_style1_main_color); ?> !important;
         }
     </style>
     <?php
@@ -72,11 +72,12 @@ function adminol_style_login() {
             }
         </style>
     <?php }
-    $logo_option_admino = admnl_options('admin_logo');
+
+    $logo_option_admino = esc_url(admnl_options('admin_logo'));
     if (!empty($logo_option_admino)) { ?>
         <style>
             #login h1 a, .login h1 a {
-                background-image: url(<?php echo $logo_option_admino; ?>);
+                background-image: url(<?php echo esc_attr($logo_option_admino); ?>);
                 background-repeat: no-repeat;
                 background-size: contain;
                 width: 100%;
@@ -90,10 +91,11 @@ function adminol_style_login() {
             }
         </style>
     <?php }
-    $disable_signup_lostpassword = admnl_options('disable_signup_lostpassword') !== "off" ? true : false;
-    $disable_backtoblog = admnl_options('disable_backtoblog') !== "off" ? true : false;
-    $background_login_picture = admnl_options('admin_bg');
-    wp_enqueue_style('login-page-general-styles', ADMNL_ASSETS . '/css/login-page-general.css');
+
+    $disable_signup_lostpassword = admnl_options('disable_signup_lostpassword') !== "off";
+    $disable_backtoblog = admnl_options('disable_backtoblog') !== "off";
+    $background_login_picture = esc_url(admnl_options('admin_bg'));
+    wp_enqueue_style('login-page-general-styles', ADMNL_ASSETS . '/css/login-page-general.css', array(), ADMNL_VERSION);
     ?>
     <style>
         #login {
@@ -113,40 +115,50 @@ function adminol_style_login() {
             }
         </style>
     <?php }
+
+    $login_other_color = esc_attr(admnl_options('login_other_color'));
     if (!empty($login_other_color)) { ?>
         <style>
             .wp-core-ui .button-secondary .dashicons:before,
             #wp-submit:hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary.active,
             .wp-core-ui .button-primary.active:focus, .wp-core-ui .button-primary:active {
-                color: <?php echo $login_other_color;?> !important;
+                color: <?php echo esc_attr($login_other_color); ?> !important;
                 background: white !important;
             }
             .wp-core-ui .button-primary {
-                background: <?php echo $login_other_color;?> !important;
+                background: <?php echo esc_attr($login_other_color); ?> !important;
             }
             .login #login_error, .login .message, .login .success {
-                border-color: <?php echo $login_other_color;?> !important;
+                border-color: <?php echo esc_attr($login_other_color); ?> !important;
             }
             #user_login:focus, #user_email:focus, #user_pass:focus, .input:focus, .password-input:focus, .login input[type="text"]:focus, input:focus {
-                border: 2px solid <?php echo $login_other_color;?> !important;
+                border: 2px solid <?php echo esc_attr($login_other_color); ?> !important;
             }
         </style>
-    <?php } if (!empty($login_box_bg_color)) { ?>
+    <?php }
+
+    $login_box_bg_color = esc_attr(admnl_options('login_box_bg_color'));
+    if (!empty($login_box_bg_color)) { ?>
         <style>
             #login, #loginform {
-                background: <?php echo $login_box_bg_color;?> !important;
+                background: <?php echo esc_attr(login_box_bg_color); ?> !important;
             }
         </style>
-    <?php } if (!empty($login_text_color)) { ?>
+    <?php }
+
+    $login_text_color = esc_attr(admnl_options('login_text_color'));
+    if (!empty($login_text_color)) { ?>
         <style>
             .message-wp-login-admino, .login form, .login #backtoblog, .login #nav, .login #login_error, .login .message, .login .success, #nav a, #backtoblog a {
-                color: <?php echo $login_text_color;?> !important;
+                color: <?php echo esc_attr($login_text_color); ?> !important;
             }
         </style>
-    <?php } if (!empty($background_login_picture)) { ?>
+    <?php }
+
+    if (!empty($background_login_picture)) { ?>
         <style>
             body.login {
-                background-image: url(<?php echo $background_login_picture;?>) !important;
+                background-image: url(<?php echo esc_attr($background_login_picture); ?>) !important;
             }
         </style>
     <?php }
@@ -166,11 +178,7 @@ function admnl_login_body_class($classes) {
 }
 
 function admnl_login_display_language_dropdown() {
-    if (admnl_options('disable_wp_language_switcher') !== "off") {
-        return true;
-    } else {
-        return false;
-    }
+    return admnl_options('disable_wp_language_switcher') !== "off";
 }
 
 function admnl_enable_login_autofocus() {
