@@ -109,8 +109,9 @@ a {
 	background: #294559;
 	box-shadow: 0 4px 9px #375f7d4f !important;
 	border-radius: 0px 0px 12px 12px !important;
-	right: 12px !important;
-	width: 98% !important;
+	right: 50% !important;
+    width: 98% !important;
+    transform: translateX(50%);
 }
 #wpadminbar .ab-top-menu > li.hover > .ab-item, #wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus, #wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item, #wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus {
 	background: #3e5c73;
@@ -293,4 +294,20 @@ div.wp-menu-image::before {
 #adminmenu #menu-posts-elementor_library .wp-menu-image:before, #adminmenu #toplevel_page_elementor div.wp-menu-image:before {
 	font-family: eicons !important;
 }
-
+@media only screen and (max-width: 960px) {
+	.auto-fold #adminmenu, .auto-fold #adminmenu li.menu-top, .auto-fold #adminmenuback, .auto-fold #adminmenuwrap {
+		width: 36px !important;
+	}
+	.auto-fold #adminmenu .wp-has-current-submenu div.wp-menu-image::before {
+		margin-right: -7px !important;
+	}
+}
+@media only screen and (max-width: 782px) {
+	#wpadminbar {
+		height: unset !important;
+		top: -3px !important;
+	}
+	.auto-fold #adminmenu, .auto-fold #adminmenu li.menu-top, .auto-fold #adminmenuback, .auto-fold #adminmenuwrap {
+		width: fit-content !important;
+	}
+}

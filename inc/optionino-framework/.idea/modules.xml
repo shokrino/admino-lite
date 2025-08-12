@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/admino-lite.iml" filepath="$PROJECT_DIR$/.idea/admino-lite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sdo-framework.iml" filepath="$PROJECT_DIR$/.idea/sdo-framework.iml" />
     </modules>
   </component>
 </project>

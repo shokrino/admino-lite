@@ -19,17 +19,32 @@ if (!class_exists('OPTNNO')) {
             add_action('wp_head', [$this,'wp_head']);
             add_action('admin_menu', [$this,'create_menu']);
             add_action( 'init', [$this,'optionino_load_textdomain'] );
+            $this->setup_defaults();
         }
+        
+        public function setup() {
 
-        public static function setup() {
-
+        }
+        public function setup_defaults() {
+            $get_fields = self::$fields;
+            foreach ($get_fields as $dev_name => $tabs) {
+                foreach ($tabs as $tab_name => $arrays) {
+                    foreach ($arrays as $names => $field) {
+                        $field_value = optionino_get($dev_name,$field['id']);
+                        if (empty($field_value) && !empty($field['default'])) {
+                            $saved_data = get_option($dev_name, array());
+                            $saved_data[$field['id']] = $field['default'];
+                            update_option($dev_name, $saved_data);
+                        }
+                    }
+                }
+            }
         }
         public static function set_config($dev_name, $settings) {
             foreach (self::$settings as $existing_config) {
                 if ($existing_config['dev_name'] === $dev_name) {
                     add_action('admin_notices', function() use ($dev_name) {
-                        // translators: %s is the ID of the configuration that caused the error.
-                        echo '<div class="error"><p>' . sprintf(esc_html__('Configuration with ID "%s" is already in use. Please use a unique ID.','admino-lite'), esc_html($dev_name)) . '</p></div>';
+                        echo __('<div class="error"><p>Configuration with ID "' . esc_html($dev_name) . '" is already in use. Please use a unique ID.</p></div>',OPTNNO_TEXTDOMAIN);
                     });
                     return;
                 }
@@ -44,8 +59,7 @@ if (!class_exists('OPTNNO')) {
             foreach (self::$tabs[$dev_name] as $existing_tab) {
                 if ($existing_tab['id'] === $tab_settings['id']) {
                     add_action('admin_notices', function() use ($tab_settings) {
-                        // translators: %s is the ID of the tab that caused the error.
-                        echo '<div class="error"><p>' . sprintf(esc_html__('Tab ID "%s" is already in use. Please use a unique ID.','admino-lite'), esc_html($tab_settings['id'])) . '</p></div>';
+                        echo __('<div class="error"><p>Tab ID "' . esc_html($tab_settings['id']) . '" is already in use. Please use a unique ID.</p></div>',OPTNNO_TEXTDOMAIN);
                     });
                     return;
                 }
@@ -71,8 +85,7 @@ if (!class_exists('OPTNNO')) {
                 foreach ($tabFieldIds as $fieldId) {
                     if (in_array($fieldId, $existingFieldIds) || is_id_duplicate_optionino($tabFieldIds, $fieldId)) {
                         add_action('admin_notices', function() use ($fieldId, $tab) {
-                            // translators: %s is the ID of the field that caused the error.
-                            echo '<div class="error"><p>' . sprintf(esc_html__('Field ID "%s" is already in use. Please use a unique ID.','admino-lite'), esc_html($fieldId)) . '</p></div>';
+                            echo '<div class="error"><p>' . esc_html__('Field ID "' . $fieldId . '" is already in use. Please use a unique ID.', OPTNNO_TEXTDOMAIN) . '</p></div>';
                         });
                         return;
                     }
@@ -139,7 +152,7 @@ if (!class_exists('OPTNNO')) {
             add_filter( 'admin_footer_text', [$this,'admin_footer_text'] );
         }
         public function admin_footer_text() {
-            esc_html_e('Powered by <a href="http://shokrino.com/" target="_blank">ShokrinoDevOptions Framework</a>', 'admino-lite');
+            _e('Options Page powered by <a href="https://github.com/shokrino/optionino-framework" target="_blank">Optionino Framework</a>',OPTNNO_TEXTDOMAIN);
         }
         public function optionino_load_textdomain() {
             load_plugin_textdomain( OPTNNO_TEXTDOMAIN, false,basename( OPTNNO_PATH ) . '/languages/' );
@@ -153,8 +166,8 @@ if (!class_exists('OPTNNO')) {
             }
             wp_enqueue_style('wp-color-picker');
             wp_enqueue_script('wp-color-picker');
-            wp_enqueue_style( 'optionino-settings-page', OPTNNO_ASSETS.'css/setting.css', array() , OPTNNO_VERSION , 'all');
-            wp_enqueue_script( 'optionino-settings-page', OPTNNO_ASSETS.'js/setting.js' , array() , OPTNNO_VERSION  , true);
+            wp_enqueue_style( 'optionino-settings-page', OPTNNO_ASSETS.'css/setting.css', array(), false, 'all');
+            wp_enqueue_script( 'optionino-settings-page', OPTNNO_ASSETS.'js/setting.js' , array() , false , true);
             wp_localize_script( 'optionino-settings-page', 'data_optionino', array(
                 'ajax_url' => admin_url( 'admin-ajax.php' ),
                 'nonce' => wp_create_nonce('optionino_nonce')

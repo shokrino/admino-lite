@@ -17,6 +17,8 @@ if (!class_exists('OPTNNO_Secure')) {
                 $this->secretKey = $this->generateSecretKey(64);
                 if ($this->secretKey) {
                     update_option('optinno_secret_key', $this->secretKey);
+                } else {
+                    error_log('Failed to generate a secure key for OPTNNO_Secure');
                 }
             }
         }
@@ -25,6 +27,7 @@ if (!class_exists('OPTNNO_Secure')) {
             try {
                 return bin2hex(random_bytes($length));
             } catch (Exception $e) {
+                error_log('Error generating secret key: ' . $e->getMessage());
                 return false;
             }
         }
