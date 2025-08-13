@@ -49,7 +49,7 @@ if (class_exists('OPTNNO')) {
     }
 
     function adminol_style_dashboard() {
-        wp_enqueue_style('custom_admin_panel_style', ADMNL_ASSETS . '/css/style1.css');
+        wp_enqueue_style('custom_admin_panel_style', ADMNL_ASSETS . '/css/style2.css');
     }
 
     function adminol_style_dashboard_head() {
@@ -196,5 +196,12 @@ if (class_exists('OPTNNO')) {
         add_filter('login_display_language_dropdown', 'admnl_login_display_language_dropdown');
         add_filter('enable_login_autofocus', 'admnl_enable_login_autofocus');
     }
+
+    add_filter('use_block_editor_for_post_type', '__return_false', 100);
+    add_filter('use_widgets_block_editor', '__return_false');
+    
+    add_action('admin_init', function() {
+        add_editor_style(plugin_dir_url(__FILE__) . 'assets/css/editor-dark.css');
+    });
 
 }

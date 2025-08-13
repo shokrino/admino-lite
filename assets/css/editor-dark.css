@@ -1,0 +1,14 @@
+/* Dark Mode برای محتوای داخل ویرایشگر TinyMCE */
+body {
+    background-color: #2d2e30 !important;
+    color: #e8eaed !important;
+}
+a {
+    color: #8ab4f8 !important;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+}
+table, th, td {
+    border-color: #5f6368 !important;
+}
