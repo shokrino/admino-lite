@@ -22,7 +22,7 @@ define('ADMNL_URL',  plugin_dir_url(__FILE__));
 define('ADMNL_INC' , ADMNL_PATH.'/inc');
 define('ADMNL_LIB' , ADMNL_PATH.'/inc/lib');
 define('ADMNL_TPL' , ADMNL_PATH.'/inc/templates');
-define('ADMNL_ASSETS' , ADMNL_URL.'/assets');
+define('ADMNL_ASSETS' , ADMNL_URL.'assets');
 define('ADMNL_FONTS' , ADMNL_ASSETS.'/fonts');
 define('ADMNL_TEXTDOMAIN' , 'admino-l');
 
@@ -31,77 +31,77 @@ if (!class_exists('OPTNNO')) {
     require_once 'inc/optionino-framework/optionino-framework.php';
 }
 if (class_exists('OPTNNO')) {
-    require_once ADMNL_PATH . 'inc/helpers.php';
-    require_once ADMNL_PATH . 'inc/MenuEditor.php';
-    require_once ADMNL_PATH . 'inc/Columns.php';
-    require_once ADMNL_PATH . 'inc/WhiteLabel.php';
-    require_once ADMNL_PATH . 'inc/LoginURL.php';
-    require_once ADMNL_PATH . 'inc/LoginProtect.php';
-    require_once ADMNL_PATH . 'inc/Captcha.php';
-    require_once ADMNL_PATH . 'inc/Hardening.php';
-    require_once ADMNL_PATH . 'inc/SecurityHubPage.php';
+    // require_once ADMNL_PATH . 'inc/helpers.php';
+    // require_once ADMNL_PATH . 'inc/MenuEditor.php';
+    // require_once ADMNL_PATH . 'inc/Columns.php';
+    // require_once ADMNL_PATH . 'inc/WhiteLabel.php';
+    // require_once ADMNL_PATH . 'inc/LoginURL.php';
+    // require_once ADMNL_PATH . 'inc/LoginProtect.php';
+    // require_once ADMNL_PATH . 'inc/Captcha.php';
+    // require_once ADMNL_PATH . 'inc/Hardening.php';
+    // require_once ADMNL_PATH . 'inc/SecurityHubPage.php';
 
     require_once 'inc/optionino-config.php';
 
-    register_activation_hook(__FILE__, function () {
+    // register_activation_hook(__FILE__, function () {
 
-        add_option('admino_menu_profile_default', wp_json_encode([
-            'order' => ['index.php','edit.php','upload.php'],
-            'items' => [],
-            'subs'  => [],
-        ]), '', false);
+    //     add_option('admino_menu_profile_default', wp_json_encode([
+    //         'order' => ['index.php','edit.php','upload.php'],
+    //         'items' => [],
+    //         'subs'  => [],
+    //     ]), '', false);
 
-        add_option('admino_columns', wp_json_encode([
-            'posts' => [],
-            'tax'   => [],
-        ]), '', false);
+    //     add_option('admino_columns', wp_json_encode([
+    //         'posts' => [],
+    //         'tax'   => [],
+    //     ]), '', false);
 
-        add_option('admino_whitelabel', wp_json_encode([
-            'login_logo' => '',
-            'brand_logo_small' => '',
-            'footer_text' => '',
-            'hide_help' => 0,
-            'hide_screen_options' => 0,
-            'clean_dashboard' => 0,
-            'hide_wp_branding' => 0,
-        ]), '', false);
+    //     add_option('admino_whitelabel', wp_json_encode([
+    //         'login_logo' => '',
+    //         'brand_logo_small' => '',
+    //         'footer_text' => '',
+    //         'hide_help' => 0,
+    //         'hide_screen_options' => 0,
+    //         'clean_dashboard' => 0,
+    //         'hide_wp_branding' => 0,
+    //     ]), '', false);
 
-        add_option('admino_login_url', wp_json_encode([
-            'slug' => 'my-login',
-            'block_direct' => 1,
-            'allow_lostpassword' => 1,
-            'secret_fallback' => '',
-        ]), '', false);
+    //     add_option('admino_login_url', wp_json_encode([
+    //         'slug' => 'my-login',
+    //         'block_direct' => 1,
+    //         'allow_lostpassword' => 1,
+    //         'secret_fallback' => '',
+    //     ]), '', false);
 
-        add_option('admino_login_protect', wp_json_encode([
-            'enabled' => 1,
-            'max_attempts' => 5,
-            'window_minutes' => 15,
-            'lock_minutes' => 30,
-            'notify_admin' => 0,
-        ]), '', false);
+    //     add_option('admino_login_protect', wp_json_encode([
+    //         'enabled' => 1,
+    //         'max_attempts' => 5,
+    //         'window_minutes' => 15,
+    //         'lock_minutes' => 30,
+    //         'notify_admin' => 0,
+    //     ]), '', false);
 
-        add_option('admino_captcha', wp_json_encode([
-            'provider' => 'none',
-            'site_key' => '',
-            'secret_key' => '',
-            'on' => ['login'],
-        ]), '', false);
+    //     add_option('admino_captcha', wp_json_encode([
+    //         'provider' => 'none',
+    //         'site_key' => '',
+    //         'secret_key' => '',
+    //         'on' => ['login'],
+    //     ]), '', false);
 
-        add_option('admino_hardening', wp_json_encode([
-            'disable_file_edit' => 1,
-            'disable_xmlrpc' => 1,
-            'rest_users_block_anon' => 1,
-            'remove_wp_version' => 1,
-            'disallow_plugin_theme_install' => 0,
-        ]), '', false);
+    //     add_option('admino_hardening', wp_json_encode([
+    //         'disable_file_edit' => 1,
+    //         'disable_xmlrpc' => 1,
+    //         'rest_users_block_anon' => 1,
+    //         'remove_wp_version' => 1,
+    //         'disallow_plugin_theme_install' => 0,
+    //     ]), '', false);
 
-        flush_rewrite_rules();
-    });
+    //     flush_rewrite_rules();
+    // });
 
-    register_deactivation_hook(__FILE__, function () {
-        flush_rewrite_rules();
-    });
+    // register_deactivation_hook(__FILE__, function () {
+    //     flush_rewrite_rules();
+    // });
 
 
 
@@ -166,8 +166,8 @@ if (class_exists('OPTNNO')) {
                 }
             </style>
         <?php }
-        $disable_signup_lostpassword = admnl_options('disable_signup_lostpassword') !== "off" ? true : false;
-        $disable_backtoblog = admnl_options('disable_backtoblog') !== "off" ? true : false;
+        $disable_signup_lostpassword = admnl_options('disable_signup_lostpassword') !== "false" ? true : false;
+        $disable_backtoblog = admnl_options('disable_backtoblog') !== "false" ? true : false;
         $background_login_picture = admnl_options('admin_bg');
         wp_enqueue_style('login-page-general-styles', ADMNL_ASSETS . '/css/login-page-general.css');
         ?>
@@ -219,13 +219,25 @@ if (class_exists('OPTNNO')) {
                     color: <?php echo $login_text_color;?> !important;
                 }
             </style>
-        <?php } if (!empty($background_login_picture)) { ?>
+        <?php }
+        if (admnl_options('admin_bg_login_type') == "image") {
+        if (!empty($background_login_picture)) { ?>
             <style>
                 body.login {
                     background-image: url(<?php echo $background_login_picture;?>) !important;
                 }
             </style>
         <?php }
+        } else if (admnl_options('admin_bg_login_type') == "color") {
+            $background_login_color = admnl_options('admin_bg_color');
+            ?>
+            <style>
+                body.login {
+                    background-color: <?php echo $background_login_color; ?> !important;
+                }
+            </style>
+            <?php
+        }
     }
 
     function admnl_login_headerurl() {
@@ -242,7 +254,7 @@ if (class_exists('OPTNNO')) {
     }
 
     function admnl_login_display_language_dropdown() {
-        if (admnl_options('disable_wp_language_switcher') !== "off") {
+        if (admnl_options('disable_wp_language_switcher') !== "false") {
             return true;
         } else {
             return false;
@@ -252,22 +264,22 @@ if (class_exists('OPTNNO')) {
     function admnl_enable_login_autofocus() {
         return false;
     }
-
-    if (admnl_options('persian_font') !== "off") {
+    
+    if (admnl_options('persian_font') !== "false") {
         add_action('wp_enqueue_scripts', 'adminol_adminbar_css');
         add_action('admin_enqueue_scripts', 'adminol_font_dashboard');
         add_action('login_enqueue_scripts', 'adminol_font_dashboard');
     }
 
-    if (admnl_options('admin_style') !== "off") {
+    if (admnl_options('admin_style') !== "false") {
         add_action('admin_enqueue_scripts', 'adminol_style_dashboard');
         add_action('admin_head', 'adminol_style_dashboard_head');
     }
 
-    if (admnl_options('login_style') !== "off") {
+    if (admnl_options('login_style') !== "false") {
         add_action('login_enqueue_scripts', 'adminol_style_login');
         add_action('login_head', 'adminol_style_dashboard_head');
-        add_filter('login_headerurl', 'admnl_login_headerurl');
+        add_filter('login_headerurl', 'admnl_login_headerurl', 100);
         add_filter('login_headertext', 'admnl_login_headertext');
         add_filter('login_body_class', 'admnl_login_body_class');
         add_filter('login_display_language_dropdown', 'admnl_login_display_language_dropdown');
