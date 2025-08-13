@@ -6,8 +6,8 @@
  * @since 1.0.0
  *
  */
-if (!class_exists('OPTNNO')) {
-    class OPTNNO {
+if (!class_exists('OPTNNO', false)) {
+class OPTNNO {
         public static $settings = array();
         public static $tabs = array();
         public static $fields = array();
@@ -59,15 +59,26 @@ if (!class_exists('OPTNNO')) {
             foreach (self::$tabs[$dev_name] as $existing_tab) {
                 if ($existing_tab['id'] === $tab_settings['id']) {
                     add_action('admin_notices', function() use ($tab_settings) {
-                        echo __('<div class="error"><p>Tab ID "' . esc_html($tab_settings['id']) . '" is already in use. Please use a unique ID.</p></div>',OPTNNO_TEXTDOMAIN);
+                        echo __('<div class="error"><p>Tab ID "' . esc_html($tab_settings['id']) . '" is already in use. Please use a unique ID.</p></div>', OPTNNO_TEXTDOMAIN);
                     });
                     return;
                 }
             }
-            self::$tabs[$dev_name][$tab_settings['id']] = $tab_settings;
-            $fields[$tab_settings['id']] = $tab_settings['fields'];
+
+            $tab_id = $tab_settings['id'];
+
+            self::$tabs[$dev_name][$tab_id] = $tab_settings;
+
+            $fields_for_tab = array();
+            if (isset($tab_settings['fields']) && is_array($tab_settings['fields'])) {
+                $fields_for_tab = $tab_settings['fields'];
+            }
+
+            $fields = array();
+            $fields[$tab_id] = $fields_for_tab;
             self::set_fields($dev_name, $fields);
         }
+
         public static function set_fields($dev_name, $tabfields) {
             if (!isset(self::$fields[$dev_name])) {
                 self::$fields[$dev_name] = array();
@@ -148,7 +159,7 @@ if (!class_exists('OPTNNO')) {
             }
         }
         public function page_content($settings) {
-            require_once OPTNNO_TMPL.'setting-page.php';
+            require_once ( defined('OPTNNO_TMPL') ? OPTNNO_TMPL : ( defined('OPTNNO_INC') ? OPTNNO_INC . 'templates/' : __DIR__ . '/../templates/' ) ) . 'setting-page.php';
             add_filter( 'admin_footer_text', [$this,'admin_footer_text'] );
         }
         public function admin_footer_text() {

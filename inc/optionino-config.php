@@ -106,6 +106,14 @@ OPTNNO::set_tab('admnl_option',array(
     ),
 ));
 
+// OPTNNO::set_tab('admnl_option',array(
+//     'id'    => 'report_tab',
+//     'title' => 'گزارش',
+//     'desc' => 'از این رنگ در بخش های مختلف پنل پیشخوان استفاده خواهد شد',
+//     'icon'  => 'dashicons-media-document',
+//     'file'  => ADMNL_PATH . '/report-tab.php',
+// ));
+
 function admnl_add_admin_notice() {
     if (isset($_GET['page']) && $_GET['page'] === 'admnl_option_settings') {
         ?>
