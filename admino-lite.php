@@ -17,8 +17,8 @@ $plugin_version = $plugin_data['Version'];
 $plugin_name = $plugin_data_name['Plugin Name'];
 define('ADMNL_NAME', $plugin_name);
 define('ADMNL_VERSION', $plugin_version);
-define('ADMNL_PATH' , WP_CONTENT_DIR.'/plugins/admino-lite');
-define('ADMNL_URL' , plugin_dir_url( __DIR__ ).'admino-lite');
+define('ADMNL_PATH', plugin_dir_path(__FILE__));
+define('ADMNL_URL',  plugin_dir_url(__FILE__));
 define('ADMNL_INC' , ADMNL_PATH.'/inc');
 define('ADMNL_LIB' , ADMNL_PATH.'/inc/lib');
 define('ADMNL_TPL' , ADMNL_PATH.'/inc/templates');
@@ -31,7 +31,80 @@ if (!class_exists('OPTNNO')) {
     require_once 'inc/optionino-framework/optionino-framework.php';
 }
 if (class_exists('OPTNNO')) {
+    require_once ADMNL_PATH . 'inc/helpers.php';
+    require_once ADMNL_PATH . 'inc/MenuEditor.php';
+    require_once ADMNL_PATH . 'inc/Columns.php';
+    require_once ADMNL_PATH . 'inc/WhiteLabel.php';
+    require_once ADMNL_PATH . 'inc/LoginURL.php';
+    require_once ADMNL_PATH . 'inc/LoginProtect.php';
+    require_once ADMNL_PATH . 'inc/Captcha.php';
+    require_once ADMNL_PATH . 'inc/Hardening.php';
+    require_once ADMNL_PATH . 'inc/SecurityHubPage.php';
+
     require_once 'inc/optionino-config.php';
+
+    register_activation_hook(__FILE__, function () {
+
+        add_option('admino_menu_profile_default', wp_json_encode([
+            'order' => ['index.php','edit.php','upload.php'],
+            'items' => [],
+            'subs'  => [],
+        ]), '', false);
+
+        add_option('admino_columns', wp_json_encode([
+            'posts' => [],
+            'tax'   => [],
+        ]), '', false);
+
+        add_option('admino_whitelabel', wp_json_encode([
+            'login_logo' => '',
+            'brand_logo_small' => '',
+            'footer_text' => '',
+            'hide_help' => 0,
+            'hide_screen_options' => 0,
+            'clean_dashboard' => 0,
+            'hide_wp_branding' => 0,
+        ]), '', false);
+
+        add_option('admino_login_url', wp_json_encode([
+            'slug' => 'my-login',
+            'block_direct' => 1,
+            'allow_lostpassword' => 1,
+            'secret_fallback' => '',
+        ]), '', false);
+
+        add_option('admino_login_protect', wp_json_encode([
+            'enabled' => 1,
+            'max_attempts' => 5,
+            'window_minutes' => 15,
+            'lock_minutes' => 30,
+            'notify_admin' => 0,
+        ]), '', false);
+
+        add_option('admino_captcha', wp_json_encode([
+            'provider' => 'none',
+            'site_key' => '',
+            'secret_key' => '',
+            'on' => ['login'],
+        ]), '', false);
+
+        add_option('admino_hardening', wp_json_encode([
+            'disable_file_edit' => 1,
+            'disable_xmlrpc' => 1,
+            'rest_users_block_anon' => 1,
+            'remove_wp_version' => 1,
+            'disallow_plugin_theme_install' => 0,
+        ]), '', false);
+
+        flush_rewrite_rules();
+    });
+
+    register_deactivation_hook(__FILE__, function () {
+        flush_rewrite_rules();
+    });
+
+
+
     function adminol_load_textdomain() {
         load_plugin_textdomain( 'admino-l', false, basename( dirname( __FILE__ ) ) . '/languages/' );
     }
