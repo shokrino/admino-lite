@@ -203,9 +203,10 @@ if (class_exists('OPTNNO')) {
 
     add_filter('use_block_editor_for_post_type', '__return_false', 100);
     add_filter('use_widgets_block_editor', '__return_false');
-    
-    add_action('admin_init', function() {
-        add_editor_style(plugin_dir_url(__FILE__) . 'assets/css/editor-dark.css');
-    });
 
+    if (admnl_options('admin_style_type') == "dark") {
+        add_action('admin_init', function() {
+            add_editor_style(plugin_dir_url(__FILE__) . 'assets/css/editor-dark.css');
+        });
+    }
 }

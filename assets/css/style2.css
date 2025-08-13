@@ -1,63 +1,34 @@
-/* ======== Google Search Console Inspired WP Admin - Dark Mode ======== */
 body {
     background: #202124 !important;
     color: #e8eaed !important;
 }
-
-/* Sidebar & Admin Bar */
-#adminmenu,
-#adminmenu .wp-submenu,
-#adminmenuback,
-#adminmenuwrap,
-div#wpadminbar, div#screen-options-wrap {
+#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap, div#wpadminbar, div#screen-options-wrap {
     background-color: #202124 !important;
     border: none !important;
 }
-
-/* Menu Links */
-#wpadminbar .ab-empty-item,
-#wpadminbar a.ab-item,
-#adminmenu a,
-#wpadminbar > #wp-toolbar span.ab-label,
-#wpadminbar > #wp-toolbar span.noticon {
+#wpadminbar .ab-empty-item, #wpadminbar a.ab-item, #adminmenu a, #wpadminbar > #wp-toolbar span.ab-label, #wpadminbar > #wp-toolbar span.noticon {
     color: #e8eaed !important;
     font-weight: 500 !important;
 }
-
-/* Icons in Admin Bar */
-#wpadminbar #adminbarsearch:before,
-#wpadminbar .ab-icon:before,
-#wpadminbar .ab-item:before {
+#wpadminbar #adminbarsearch:before, #wpadminbar .ab-icon:before, #wpadminbar .ab-item:before {
     color: rgba(255, 255, 255, 0.6) !important;
 }
-
-/* Menu Item Hover */
-#adminmenu li.menu-top:hover > a,
-#adminmenu li.wp-has-current-submenu > a {
+#adminmenu li.menu-top:hover > a, #adminmenu li.wp-has-current-submenu > a {
     background-color: #303134 !important;
     color: #8ab4f8 !important;
 }
-
-/* Submenu Links */
 #adminmenu .wp-submenu a {
     color: #e8eaed !important;
 }
 #adminmenu .wp-submenu a:hover {
     background-color: #303134 !important;
 }
-
-/* Cards & Boxes */
-.postbox,
-.welcome-panel,
-.plugin-card,
-table.widefat {
+.postbox, .welcome-panel, .plugin-card, table.widefat {
     background: #2d2e30 !important;
     border-radius: 8px !important;
     border: 1px solid #3c4043 !important;
     color: #e8eaed !important;
 }
-
-/* Buttons */
 .wp-core-ui .button-primary {
     background-color: #8ab4f8 !important;
     border: none !important;
@@ -76,8 +47,6 @@ table.widefat {
 .wp-core-ui .button:hover {
     background-color: #5f6368 !important;
 }
-
-/* Notices */
 .notice-success {
     border-left: 4px solid #34a853 !important;
     background-color: #1e3125 !important;
@@ -98,8 +67,6 @@ table.widefat {
     background-color: #1a222e !important;
     color: #e8eaed !important;
 }
-
-/* Inputs */
 input, select, textarea {
     border-radius: 4px !important;
     border: 1px solid #5f6368 !important;
@@ -110,8 +77,6 @@ input:focus, select:focus, textarea:focus {
     border-color: #8ab4f8 !important;
     box-shadow: 0 0 0 2px rgba(138,180,248,0.25) !important;
 }
-
-/* Tables */
 table.widefat th {
     background-color: #303134 !important;
     color: #e8eaed !important;
@@ -124,11 +89,7 @@ table.widefat tr:hover {
     height: auto;
     margin-top: -1px;
 }
-/* Add New / Page Title Action Buttons - Dark Mode */
-.wrap .add-new-h2,
-.wrap .add-new-h2:active,
-.wrap .page-title-action,
-.wrap .page-title-action:active {
+.wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active {
     display: inline-block;
     position: relative;
     box-sizing: border-box;
@@ -150,120 +111,86 @@ table.widefat tr:hover {
     -webkit-appearance: none;
     transition: all 0.2s ease;
 }
-
-.wrap .add-new-h2:hover,
-.wrap .page-title-action:hover {
+.wrap .add-new-h2:hover, .wrap .page-title-action:hover {
     background: #8ab4f8 !important;
     color: #202124 !important;
     border-color: #8ab4f8 !important;
 }
-/* Headings - Dark Mode */
 h1 {
-    color: #e8eaed !important; /* متن روشن */
+    color: #e8eaed !important;
     font-size: 2em;
-    font-weight: 500 !important; /* خوانایی بهتر */
+    font-weight: 500 !important;
     margin: 0.67em 0;
     line-height: 1.3;
 }
-/* Headings - Dark Mode */
 h2, h3 {
-    color: #e8eaed !important; /* روشن برای پس‌زمینه تیره */
+    color: #e8eaed !important;
     font-size: 1.3em !important;
     font-weight: 500 !important;
     margin: 1em 0;
     line-height: 1.4;
 }
-
 ul#adminmenu a.wp-has-current-submenu:after, .woocommerce-admin-page .wp-has-current-submenu:after, ul#adminmenu>li.current>a.current:after {
     display: none;
 }
-/* Odd List Items - Dark Mode */
-#future-posts li:nth-child(odd),
-#published-posts li:nth-child(odd) {
-    background-color: #2d2e30 !important; /* خاکستری تیره */
+#future-posts li:nth-child(odd), #published-posts li:nth-child(odd) {
+    background-color: #2d2e30 !important;
 }
-/* Color Option Selected / Hover - Dark Mode */
-.color-option.selected,
-.color-option:hover {
-    background: #3c4043 !important; /* خاکستری تیره با کنتراست */
+.color-option.selected, .color-option:hover {
+    background: #3c4043 !important;
 }
-/* Select2 Single - Dark Mode */
 .select2-container--default .select2-selection--single {
-    background-color: #303134 !important; /* پس‌زمینه تیره */
-    border: 1px solid #5f6368 !important; /* بوردر خاکستری */
+    background-color: #303134 !important;
+    border: 1px solid #5f6368 !important;
     border-radius: 4px !important;
-    color: #e8eaed !important; /* متن روشن */
+    color: #e8eaed !important;
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: #e8eaed !important; /* متن گزینه انتخاب‌شده */
+    color: #e8eaed !important;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
-    border-color: #e8eaed transparent transparent transparent !important; /* فلش سفید */
+    border-color: #e8eaed transparent transparent transparent !important;
 }
-/* Disabled Buttons - Dark Mode */
-.wp-core-ui .button-disabled,
-.wp-core-ui .button-secondary.disabled,
-.wp-core-ui .button-secondary:disabled,
-.wp-core-ui .button-secondary[disabled],
-.wp-core-ui .button.disabled,
-.wp-core-ui .button:disabled,
-.wp-core-ui .button[disabled] {
-    color: #9aa0a6 !important; /* خاکستری روشن‌تر */
-    border-color: #5f6368 !important; /* بوردر خاکستری تیره */
-    background: #3c4043 !important; /* پس‌زمینه تیره */
+.wp-core-ui .button-disabled, .wp-core-ui .button-secondary.disabled, .wp-core-ui .button-secondary:disabled, .wp-core-ui .button-secondary[disabled], .wp-core-ui .button.disabled, .wp-core-ui .button:disabled, .wp-core-ui .button[disabled] {
+    color: #9aa0a6 !important;
+    border-color: #5f6368 !important;
+    background: #3c4043 !important;
     box-shadow: none !important;
     cursor: default !important;
     transform: none !important;
 }
-/* Plugins Table Rows - Dark Mode */
 .plugins tr {
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
-    color: #e8eaed !important;       /* متن روشن */
+    background: #2d2e30 !important;
+    color: #e8eaed !important;
 }
-/* Widefat Lists & Paragraphs - Dark Mode */
-.widefat ol,
-.widefat p,
-.widefat ul {
-    color: #e8eaed !important; /* متن روشن */
+.widefat ol, .widefat p, .widefat ul {
+    color: #e8eaed !important;
 }
-/* Alternate/Striped Rows - Dark Mode */
-.alternate,
-.striped > tbody > :nth-child(odd),
-ul.striped > :nth-child(odd) {
-    background-color: #2d2e30 !important; /* خاکستری تیره */
+.alternate, .striped > tbody > :nth-child(odd), ul.striped > :nth-child(odd) {
+    background-color: #2d2e30 !important;
 }
-/* Widefat Table Cells - Dark Mode */
-.widefat td,
-.widefat th {
-    color: #e8eaed !important; /* متن روشن */
+.widefat td, .widefat th {
+    color: #e8eaed !important;
 }
-/* Links - Dark Mode */
 a {
-    color: #8ab4f8 !important; /* آبی روشن مناسب دارک مود */
+    color: #8ab4f8 !important;
     transition-property: border, background, color;
     transition-duration: 0.05s;
     transition-timing-function: ease-in-out;
 }
-
 a:hover {
-    color: #aecbfa !important; /* کمی روشن‌تر در هاور */
+    color: #aecbfa !important;
 }
-/* Subsubsub Count - Dark Mode */
-.subsubsub a .count,
-.subsubsub a.current .count {
-    color: #e8eaed !important; /* متن روشن */
+.subsubsub a .count, .subsubsub a.current .count {
+    color: #e8eaed !important;
     font-weight: 400;
 }
-
-/* Publishing Actions - Dark Mode */
 #major-publishing-actions {
     padding: 10px;
     clear: both;
     border-top: 1px solid #5f6368 !important;
     background: #2d2e30 !important;
 }
-
-/* Editor Tools Bar - Dark Mode */
 #wp-content-editor-tools {
     background-color: #303134 !important;
     padding-top: 20px;
@@ -272,86 +199,58 @@ a:hover {
     z-index: 1000;
     border-bottom: 1px solid #5f6368 !important;
 }
-
-/* Editor Container - Dark Mode */
 .wp-editor-container {
     clear: both;
     border: 1px solid #5f6368 !important;
     background-color: #2d2e30 !important;
 }
-
-/* Common Boxes & Containers - Dark Mode */
-.comment-ays,
-.feature-filter,
-.popular-tags,
-.stuffbox,
-.widgets-holder-wrap,
-.wp-editor-container,
-p.popular-tags,
-table.widefat {
+.comment-ays, .feature-filter, .popular-tags, .stuffbox, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat {
     background: #2d2e30 !important;
     color: #e8eaed !important;
 }
-
-/* Editor Mode Switch Buttons - Dark Mode */
-.html-active .switch-html,
-.tmce-active .switch-tmce {
+.html-active .switch-html, .tmce-active .switch-tmce {
     background: #303134 !important;
     color: #e8eaed !important;
     border-bottom-color: #303134 !important;
 }
-
-/* TinyMCE Panels - Dark Mode */
 div.mce-panel {
     border: 0 !important;
     background: #2d2e30 !important;
     color: #e8eaed !important;
 }
-
-/* TinyMCE Edit Area - Dark Mode */
 div.mce-edit-area {
     background: #2d2e30 !important;
     filter: none !important;
     color: #e8eaed !important;
 }
-
-/* Switch Editor Button - Dark Mode */
 .wp-switch-editor {
     float: right;
     box-sizing: content-box;
     position: relative;
     top: 1px;
-    background: #303134 !important; /* پس‌زمینه تیره */
-    color: #e8eaed !important;       /* متن روشن */
+    background: #303134 !important;
+    color: #e8eaed !important;
     cursor: pointer;
     font-size: 13px;
     line-height: 1.46153846;
     height: 20px;
     margin: 5px 5px 0 0;
     padding: 3px 8px 4px;
-    border: 1px solid #5f6368 !important; /* بوردر خاکستری تیره */
+    border: 1px solid #5f6368 !important;
 }
-
-/* TinyMCE Listbox - Dark Mode */
 .mce-toolbar .mce-btn-group .mce-btn.mce-listbox {
     border-radius: 0;
     direction: rtl;
-    background: #2d2e30 !important;  /* پس‌زمینه تیره */
-    color: #e8eaed !important;        /* متن روشن */
-    border: 1px solid #5f6368 !important; /* بوردر خاکستری تیره */
+    background: #2d2e30 !important;
+    color: #e8eaed !important;
+    border: 1px solid #5f6368 !important;
 }
-
-/* TinyMCE Active/Pressed Buttons - Dark Mode */
-.mce-toolbar .mce-btn-group .mce-btn.mce-active,
-.mce-toolbar .mce-btn-group .mce-btn:active,
-.qt-dfw.active {
-    background: #3c4043 !important;       /* پس‌زمینه تیره‌تر */
-    border-color: #8ab4f8 !important;     /* آبی روشن گوگل */
+.mce-toolbar .mce-btn-group .mce-btn.mce-active, .mce-toolbar .mce-btn-group .mce-btn:active, .qt-dfw.active {
+    background: #3c4043 !important;
+    border-color: #8ab4f8 !important;
 }
-
-/* TinyMCE Icons - Dark Mode */
 .mce-toolbar .mce-ico {
-    color: #e8eaed !important;            /* متن/آیکون روشن */
+    color: #e8eaed !important;
     line-height: 1;
     width: 20px;
     height: 20px;
@@ -360,65 +259,45 @@ div.mce-edit-area {
     margin: 0;
     padding: 0;
 }
-
-/* Active Tabs & Menu/Category Tabs - Dark Mode */
-.wp-tab-active,
-ul.add-menu-item-tabs li.tabs,
-ul.category-tabs li.tabs {
-    border: 1px solid #5f6368 !important;          /* بوردر تیره */
-    border-bottom-color: #2d2e30 !important;       /* هماهنگ با پس‌زمینه دارک */
-    background-color: #2d2e30 !important;          /* پس‌زمینه تیره */
-    color: #e8eaed !important;                     /* متن روشن */
+.wp-tab-active, ul.add-menu-item-tabs li.tabs, ul.category-tabs li.tabs {
+    border: 1px solid #5f6368 !important;
+    border-bottom-color: #2d2e30 !important;
+    background-color: #2d2e30 !important;
+    color: #e8eaed !important;
 }
-
-/* Tab Panels - Dark Mode */
-.categorydiv div.tabs-panel,
-.customlinkdiv div.tabs-panel,
-.posttypediv div.tabs-panel,
-.taxonomydiv div.tabs-panel,
-.wp-tab-panel {
+.categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel {
     min-height: 42px;
     max-height: 200px;
     overflow: auto;
     padding: 0 .9em;
-    border: solid 1px #5f6368 !important;          /* بوردر تیره */
-    background-color: #303134 !important;          /* پس‌زمینه تیره‌تر */
-    color: #e8eaed !important;                     /* متن روشن */
+    border: solid 1px #5f6368 !important;
+    background-color: #303134 !important;
+    color: #e8eaed !important;
 }
-/* Post Status Info - Dark Mode */
 #post-status-info {
     width: 100%;
     border-spacing: 0;
-    border: 1px solid #5f6368 !important;       /* خاکستری تیره */
+    border: 1px solid #5f6368 !important;
     border-top: none;
-    background-color: #2d2e30 !important;       /* پس‌زمینه تیره */
+    background-color: #2d2e30 !important;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) !important;
     z-index: 999;
-    color: #e8eaed !important;                  /* متن روشن */
+    color: #e8eaed !important;
 }
-
-/* TinyMCE & Quicktags Buttons Hover/Focus - Dark Mode */
-.mce-toolbar .mce-btn-group .mce-btn:focus,
-.mce-toolbar .mce-btn-group .mce-btn:hover,
-.qt-dfw:focus,
-.qt-dfw:hover {
-    background: #3c4043 !important;                /* پس‌زمینه تیره‌تر در حالت hover/focus */
-    color: #e8eaed !important;                     /* متن روشن */
-    box-shadow: 0 0 0 2px #8ab4f8 !important;      /* آبی روشن گوگل برای فوکوس */
+.mce-toolbar .mce-btn-group .mce-btn:focus, .mce-toolbar .mce-btn-group .mce-btn:hover, .qt-dfw:focus, .qt-dfw:hover {
+    background: #3c4043 !important;
+    color: #e8eaed !important;
+    box-shadow: 0 0 0 2px #8ab4f8 !important;
     outline: 2px solid transparent !important;
 }
-
-/* Quicktags Toolbar - Dark Mode */
 .quicktags-toolbar {
     padding: 3px;
     position: relative;
-    border-bottom: 1px solid #5f6368 !important; /* بوردر تیره */
-    background: #2d2e30 !important;              /* پس‌زمینه تیره */
+    border-bottom: 1px solid #5f6368 !important;
+    background: #2d2e30 !important;
     min-height: 30px;
-    color: #e8eaed !important;                   /* متن روشن */
+    color: #e8eaed !important;
 }
-
-/* Dark Mode - WP Filter */
 .wp-filter {
     display: inline-block;
     position: relative;
@@ -426,44 +305,38 @@ ul.category-tabs li.tabs {
     margin: 12px 0 25px;
     padding: 0 10px;
     width: 100%;
-    box-shadow: 0 1px 2px rgba(0,0,0,.4) !important; /* سایه تیره‌تر */
-    border: 1px solid #5f6368 !important;            /* بوردر خاکستری تیره */
-    background: #2d2e30 !important;                  /* پس‌زمینه تیره */
-    color: #e8eaed !important;                       /* متن روشن */
+    box-shadow: 0 1px 2px rgba(0,0,0,.4) !important;
+    border: 1px solid #5f6368 !important;
+    background: #2d2e30 !important;
+    color: #e8eaed !important;
     font-size: 13px;
 }
-
-#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
-#adminmenu li.current a.menu-top,
-#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu {
-    background: #3a4754 !important; /* بک‌گراند تیره */
-    color: #8ab4f8 !important;       /* متن آبی روشن مثل سرچ کنسول */
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu {
+    background: #3a4754 !important;
+    color: #8ab4f8 !important;
     font-weight: 500;
 }
-
 .woocommerce-layout__header {
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
+    background: #2d2e30 !important;
     box-sizing: border-box;
     padding: 0;
     position: fixed;
     width: calc(100% - 160px);
     top: 32px;
     z-index: 1001;
-    border-bottom: 1px solid #5f6368 !important; /* خط جداکننده ملایم */
-    color: #e8eaed !important; /* متن روشن */
+    border-bottom: 1px solid #5f6368 !important;
+    color: #e8eaed !important;
 }
-
 .css-1otwcjs {
-    background-color: #2d2e30 !important; /* پس‌زمینه تیره */
-    color: #e8eaed !important;             /* متن روشن */
+    background-color: #2d2e30 !important;
+    color: #e8eaed !important;
     position: relative;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) !important; /* بوردر ملایم روشن */
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
     outline: none;
     border-radius: 7px !important;
 }
-
 .css-1xio4ab {
-    color: var(--wp-components-color-foreground, #e8eaed) !important; /* متن روشن */
+    color: var(--wp-components-color-foreground, #e8eaed) !important;
     margin: 0;
     text-wrap: pretty;
     font-size: 20px;
@@ -479,26 +352,22 @@ ul.category-tabs li.tabs {
     border: none;
     outline: none;
     cursor: pointer;
-    background-color: #2d2e30 !important; /* پس‌زمینه تیره */
+    background-color: #2d2e30 !important;
     width: 100%;
     height: 60px;
-    color: #e8eaed !important;            /* متن روشن */
+    color: #e8eaed !important;
     white-space: nowrap;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-
 .woocommerce-layout__activity-panel-tabs .woocommerce-layout__activity-panel-tab:hover {
-    background-color: #3a4754 !important; /* هاور کمی روشن‌تر */
-    color: #8ab4f8 !important;            /* رنگ آبی هایلایت */
+    background-color: #3a4754 !important;
+    color: #8ab4f8 !important;
 }
-
-/* عنوان‌های اینباکس و متن‌ها */
 .woocommerce-layout__inbox-title {
-    color: #e8eaed !important; /* متن روشن */
+    color: #e8eaed !important;
     display: flex;
     align-items: center;
 }
-
 .css-1or6bjn {
     color: var(--wp-components-color-foreground, #e8eaed) !important;
     margin: 0;
@@ -507,15 +376,11 @@ ul.category-tabs li.tabs {
     font-weight: normal;
     line-height: 20px;
 }
-
-/* باکس‌های پنل فعالیت */
 .woocommerce-homescreen .woocommerce-activity-panel .components-panel__body {
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
-    border: 1px solid #5f6368 !important; /* بوردر ملایم روشن */
+    background: #2d2e30 !important;
+    border: 1px solid #5f6368 !important;
     color: #e8eaed !important;
 }
-
-/* هدر ووکامرس */
 .woocommerce-layout__header .woocommerce-layout__header-heading {
     display: flex;
     align-items: center;
@@ -527,18 +392,14 @@ ul.category-tabs li.tabs {
     color: #e8eaed !important;
     border-bottom: 1px solid #5f6368 !important;
 }
-
-/* عنوان‌ها */
 .css-1229q8n {
     line-height: 1.4;
     margin: 0;
     text-wrap: pretty;
-    color: #e8eaed !important; /* متن روشن */
+    color: #e8eaed !important;
     font-size: 16px;
     font-weight: 600;
 }
-
-/* دکمه‌های عمومی */
 .components-button {
     align-items: center;
     -webkit-appearance: none;
@@ -557,13 +418,10 @@ ul.category-tabs li.tabs {
     text-decoration: none;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-
 .components-button:hover {
     background-color: rgba(138, 180, 248, 0.15) !important;
     color: #8ab4f8 !important;
 }
-
-/* آیتم‌های لیست آزمایشی ووکامرس */
 .woocommerce-experimental-list__item {
     display: flex;
     align-items: center;
@@ -573,10 +431,8 @@ ul.category-tabs li.tabs {
     color: #e8eaed !important;
     border-bottom: 1px solid #5f6368 !important;
 }
-
-/* نشان‌ها (Badge) */
 .woocommerce-badge {
-    background-color: #3c4043 !important; /* پس‌زمینه تیره */
+    background-color: #3c4043 !important;
     border-radius: 20px;
     display: inline-block;
     text-align: center;
@@ -588,67 +444,50 @@ ul.category-tabs li.tabs {
     min-width: 32px;
     height: 28px;
     padding: 0 6px;
-    color: #e8eaed !important; /* متن روشن */
-}
-
-/* آیتم‌های آمار */
-.woocommerce-stats-overview__stats .woocommerce-summary__item {
-    background-color: #2d2e30 !important; /* پس‌زمینه تیره */
     color: #e8eaed !important;
-    border: 1px solid #5f6368 !important; /* حاشیه ملایم */
+}
+.woocommerce-stats-overview__stats .woocommerce-summary__item {
+    background-color: #2d2e30 !important;
+    color: #e8eaed !important;
+    border: 1px solid #5f6368 !important;
     border-radius: 6px;
 }
-
-/* پیام‌های اینباکس ووکامرس در دارک‌مود */
 .woocommerce-inbox-message {
     position: relative;
-    color: #e8eaed !important; /* متن روشن */
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
-    border-radius: 4px; /* کمی نرم‌تر از نسخه پیش‌فرض */
+    color: #e8eaed !important;
+    background: #2d2e30 !important;
+    border-radius: 4px;
     font-size: 13px;
     font-size: .8125rem;
     margin: 0;
     -ms-box-orient: horizontal;
-    border: 1px solid #5f6368 !important; /* حاشیه ملایم برای جداسازی */
+    border: 1px solid #5f6368 !important;
 }
-/* دکمه‌های Dropdown ووکامرس در دارک‌مود */
 .components-button.woocommerce-dropdown-button {
-    background-color: #2d2e30 !important; /* پس‌زمینه تیره */
+    background-color: #2d2e30 !important;
     position: relative;
-    border: 1px solid #5f6368 !important; /* حاشیه ملایم */
-    color: #e8eaed !important; /* متن روشن */
+    border: 1px solid #5f6368 !important;
+    color: #e8eaed !important;
     border-radius: 4px;
     padding: 0 0 0 40px;
     width: 100%;
     height: auto;
 }
-
-/* هدر جدول ووکامرس */
 .woocommerce-table__header {
     padding: 8px 24px;
     font-weight: 700;
     white-space: nowrap;
-    background-color: #3c4043 !important; /* پس‌زمینه تیره‌تر برای هدر */
-    color: #e8eaed !important; /* متن روشن */
+    background-color: #3c4043 !important;
+    color: #e8eaed !important;
 }
-
-/* ردیف‌های مرتب‌شده */
-.woocommerce-table__header.is-sorted,
-.woocommerce-table__item.is-sorted {
-    background-color: #3a3b3d !important; /* رنگ تیره ملایم */
+.woocommerce-table__header.is-sorted, .woocommerce-table__item.is-sorted {
+    background-color: #3a3b3d !important;
 }
-
-/* هاور روی ردیف‌ها */
-.woocommerce-table__table tr:focus-within,
-.woocommerce-table__table tr:hover {
-    background-color: #44464a !important; /* هایلایت تیره */
+.woocommerce-table__table tr:focus-within, .woocommerce-table__table tr:hover {
+    background-color: #44464a !important;
 }
-
-/* Notices در حالت دارک‌مود */
-.notice,
-div.error,
-div.updated {
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
+.notice, div.error, div.updated {
+    background: #2d2e30 !important;
     border: 1px solid #5f6368 !important;
     border-right-width: 4px;
     box-shadow: 0 1px 1px rgba(0,0,0,.5);
@@ -656,22 +495,12 @@ div.updated {
     padding: 1px 12px;
     color: #e8eaed !important;
 }
-
-/* تب فعال */
-.nav-tab-active,
-.nav-tab-active:focus,
-.nav-tab-active:focus:active,
-.nav-tab-active:hover {
+.nav-tab-active, .nav-tab-active:focus, .nav-tab-active:focus:active, .nav-tab-active:hover {
     border-bottom: 1px solid #3c4043 !important;
     background: #3c4043 !important;
     color: #e8eaed !important;
 }
-
-/* نوار بازه زمانی آمار ووکامرس */
-.woocommerce-reports-wide .postbox div.stats_range ul,
-.woocommerce-reports-wide .postbox h3.stats_range ul,
-.woocommerce-reports-wrap .postbox div.stats_range ul,
-.woocommerce-reports-wrap .postbox h3.stats_range ul {
+.woocommerce-reports-wide .postbox div.stats_range ul, .woocommerce-reports-wide .postbox h3.stats_range ul, .woocommerce-reports-wrap .postbox div.stats_range ul, .woocommerce-reports-wrap .postbox h3.stats_range ul {
     list-style: none outside;
     margin: 0;
     padding: 0;
@@ -679,20 +508,14 @@ div.updated {
     background: #3c4043 !important;
     border-bottom: 1px solid #5f6368 !important;
 }
-
-/* کانتینر چارت */
-.woocommerce-reports-wide .postbox .chart-container,
-.woocommerce-reports-wrap .postbox .chart-container {
+.woocommerce-reports-wide .postbox .chart-container, .woocommerce-reports-wrap .postbox .chart-container {
     background: #2d2e30 !important;
     padding: 12px;
     position: relative;
     border: 1px solid #5f6368 !important;
     border-radius: 3px;
 }
-
-/* راهنمای چارت */
-.woocommerce-reports-wide .postbox .chart-legend,
-.woocommerce-reports-wrap .postbox .chart-legend {
+.woocommerce-reports-wide .postbox .chart-legend, .woocommerce-reports-wrap .postbox .chart-legend {
     list-style: none outside;
     margin: 0 0 1em;
     padding: 0;
@@ -702,18 +525,11 @@ div.updated {
     background: #2d2e30 !important;
     color: #e8eaed !important;
 }
-
-/* آیتم فعال در بازه زمانی گزارش‌ها */
-.woocommerce-reports-wide .postbox div.stats_range ul li.active,
-.woocommerce-reports-wide .postbox h3.stats_range ul li.active,
-.woocommerce-reports-wrap .postbox div.stats_range ul li.active,
-.woocommerce-reports-wrap .postbox h3.stats_range ul li.active {
-    background: #3c4043 !important; /* پس‌زمینه تیره‌تر */
-    box-shadow: 0 4px 0 0 #3c4043 !important; /* هم‌رنگ پس‌زمینه */
-    color: #e8eaed !important; /* متن روشن */
+.woocommerce-reports-wide .postbox div.stats_range ul li.active, .woocommerce-reports-wide .postbox h3.stats_range ul li.active, .woocommerce-reports-wrap .postbox div.stats_range ul li.active, .woocommerce-reports-wrap .postbox h3.stats_range ul li.active {
+    background: #3c4043 !important;
+    box-shadow: 0 4px 0 0 #3c4043 !important;
+    color: #e8eaed !important;
 }
-
-/* تب‌ها */
 .nav-tab {
     float: right;
     border: 1px solid #5f6368 !important;
@@ -723,25 +539,21 @@ div.updated {
     font-size: 14px;
     line-height: 1.71428571;
     font-weight: 600;
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
-    color: #e8eaed !important; /* متن روشن */
+    background: #2d2e30 !important;
+    color: #e8eaed !important;
     text-decoration: none;
     white-space: nowrap;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-
 .nav-tab:hover {
-    background: #3a4754 !important; /* هاور کمی روشن‌تر */
-    color: #8ab4f8 !important; /* آبی ملایم برای هایلایت */
+    background: #3a4754 !important;
+    color: #8ab4f8 !important;
 }
-
 body.woocommerce_page_wc-settings #mainform {
     padding: 0 30px;
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
-    color: #e8eaed !important;       /* متن روشن */
+    background: #2d2e30 !important;
+    color: #e8eaed !important;
 }
-
-/* ناوبری تب‌ها در صفحه تنظیمات ووکامرس */
 body.woocommerce_page_wc-settings .nav-tab-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -749,39 +561,29 @@ body.woocommerce_page_wc-settings .nav-tab-wrapper {
     padding-right: 30px;
     gap: 24px;
     margin: 0;
-    background: #2d2e30 !important; /* تیره در دارک مود */
+    background: #2d2e30 !important;
     border-bottom: 1px solid #3c4043 !important;
 }
-
-/* متن لیبل‌ها و تیتر جدول فرم */
-.form-table th,
-.form-wrap label {
-    color: #e8eaed !important; /* روشن برای دارک مود */
+.form-table th, .form-wrap label {
+    color: #e8eaed !important;
     font-weight: 400;
     text-shadow: none;
     vertical-align: baseline;
 }
-
-/* پس‌زمینه صفحه تنظیمات پرداخت‌ها */
-body.woocommerce-settings-payments-tab #mainform,
-body.woocommerce-settings-payments-tab #wpcontent {
-    background-color: #2d2e30 !important; /* تیره */
+body.woocommerce-settings-payments-tab #mainform, body.woocommerce-settings-payments-tab #wpcontent {
+    background-color: #2d2e30 !important;
     color: #e8eaed !important;
 }
-
-/* آیتم‌های لیست پرداخت‌ها */
 .woocommerce-list__item {
     display: flex;
     align-items: center;
     margin-bottom: 0;
     text-decoration: none;
-    background-color: #3c4043 !important; /* تیره‌تر برای تفکیک */
+    background-color: #3c4043 !important;
     color: #e8eaed !important;
     border: 1px solid #5f6368 !important;
     border-radius: 4px;
 }
-
-/* سلکتور بالای صفحه پرداخت‌ها */
 .settings-payments-main__container .settings-payment-gateways__header-select-container {
     min-width: 280px;
     min-height: 36px;
@@ -793,67 +595,44 @@ body.woocommerce-settings-payments-tab #wpcontent {
     position: relative;
     color: #e8eaed !important;
 }
-
-/* عنوان هدر پرداخت‌ها */
 .woocommerce-layout__header .woocommerce-layout__header-heading .woocommerce-settings-payments-header__title {
-    color: #e8eaed !important; /* روشن برای دارک مود */
+    color: #e8eaed !important;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
 }
-
-/* ردیف‌های فرد در جداول ووکامرس - دارک‌مود */
-table.wc_emails tr:nth-child(odd) td,
-table.wc_gateways tr:nth-child(odd) td,
-table.wc_shipping tr:nth-child(odd) td {
-    background: #3c4043 !important; /* خاکستری تیره ملایم */
-    color: #e8eaed !important;       /* متن روشن */
+table.wc_emails tr:nth-child(odd) td, table.wc_gateways tr:nth-child(odd) td, table.wc_shipping tr:nth-child(odd) td {
+    background: #3c4043 !important;
+    color: #e8eaed !important;
 }
-
-/* ردیف‌های زوج در جدول وضعیت ووکامرس - دارک مود */
-table.wc_status_table tr:nth-child(2n) td,
-table.wc_status_table tr:nth-child(2n) th {
-    background: #3c4043 !important; /* خاکستری تیره ملایم */
-    color: #e8eaed !important;       /* متن روشن */
+table.wc_status_table tr:nth-child(2n) td, table.wc_status_table tr:nth-child(2n) th {
+    background: #3c4043 !important;
+    color: #e8eaed !important;
 }
-
-/* پنل‌های داده کوپن و محصول در ووکامرس - دارک مود */
-#woocommerce-coupon-data .panel-wrap,
-#woocommerce-product-data .panel-wrap {
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
-    color: #e8eaed !important;       /* متن روشن */
+#woocommerce-coupon-data .panel-wrap, #woocommerce-product-data .panel-wrap {
+    background: #2d2e30 !important;
+    color: #e8eaed !important;
 }
-
-/* پنل‌های عمومی ووکامرس */
-.panel,
-.woocommerce_options_panel {
+.panel, .woocommerce_options_panel {
     padding: 9px;
-    color: #e8eaed !important;       /* متن روشن */
-    background: #3c4043 !important;  /* پس‌زمینه کمی روشن‌تر از اصلی */
-    border: 1px solid #5f6368 !important; /* حاشیه ملایم */
+    color: #e8eaed !important;
+    background: #3c4043 !important;
+    border: 1px solid #5f6368 !important;
     border-radius: 4px;
 }
-
-/* تب‌های کناری در صفحه کوپن و محصول ووکامرس */
-#woocommerce-coupon-data ul.wc-tabs,
-#woocommerce-product-data ul.wc-tabs,
-.woocommerce ul.wc-tabs {
+#woocommerce-coupon-data ul.wc-tabs, #woocommerce-product-data ul.wc-tabs, .woocommerce ul.wc-tabs {
     margin: 0;
     width: 20%;
     float: right;
     line-height: 1em;
     padding: 0 0 10px;
     position: relative;
-    background-color: #2d2e30 !important; /* پس‌زمینه تیره */
-    border-left: 1px solid #5f6368 !important; /* حاشیه خاکستری تیره */
+    background-color: #2d2e30 !important;
+    border-left: 1px solid #5f6368 !important;
     box-sizing: border-box;
 }
-
-/* بخش پس‌زمینه کشیده شده تب‌ها */
-#woocommerce-coupon-data ul.wc-tabs::after,
-#woocommerce-product-data ul.wc-tabs::after,
-.woocommerce ul.wc-tabs::after {
+#woocommerce-coupon-data ul.wc-tabs::after, #woocommerce-product-data ul.wc-tabs::after, .woocommerce ul.wc-tabs::after {
     content: "";
     display: block;
     width: 100%;
@@ -861,59 +640,45 @@ table.wc_status_table tr:nth-child(2n) th {
     position: absolute;
     bottom: -9999em;
     right: 0;
-    background-color: #2d2e30 !important; /* پس‌زمینه تیره */
-    border-left: 1px solid #5f6368 !important; /* حاشیه هماهنگ */
+    background-color: #2d2e30 !important;
+    border-left: 1px solid #5f6368 !important;
 }
-/* تب فعال در صفحه کوپن و محصول ووکامرس */
-#woocommerce-coupon-data ul.wc-tabs li.active a,
-#woocommerce-product-data ul.wc-tabs li.active a,
-.woocommerce ul.wc-tabs li.active a {
-    color: #e8eaed !important;          /* متن روشن */
+#woocommerce-coupon-data ul.wc-tabs li.active a, #woocommerce-product-data ul.wc-tabs li.active a, .woocommerce ul.wc-tabs li.active a {
+    color: #e8eaed !important;
     position: relative;
-    background-color: #3c4043 !important; /* پس‌زمینه تیره‌تر */
+    background-color: #3c4043 !important;
 }
-
-/* سلول مرتب‌سازی فایل‌های قابل دانلود */
-.woocommerce_options_panel .downloadable_files table td.sort,
-.woocommerce_variations .downloadable_files table td.sort {
+.woocommerce_options_panel .downloadable_files table td.sort, .woocommerce_variations .downloadable_files table td.sort {
     width: 17px;
     cursor: move;
     font-size: 15px;
     text-align: center;
-    background: #2d2e30 !important;     /* پس‌زمینه تیره */
+    background: #2d2e30 !important;
     padding-left: 7px !important;
-    color: #e8eaed !important;           /* آیکون/متن روشن */
+    color: #e8eaed !important;
 }
-
-/* نام قالب‌ها در بخش پوسته‌ها - دارک مود */
 .theme-browser .theme .theme-name {
     font-size: 15px;
     font-weight: 600;
     height: 18px;
     margin: 0;
     padding: 15px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05); /* خط داخلی ملایم */
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    background: rgba(45, 46, 48, 0.85) !important; /* پس‌زمینه تیره شفاف */
-    color: #e8eaed !important; /* متن روشن */
+    background: rgba(45, 46, 48, 0.85) !important;
+    color: #e8eaed !important;
 }
-
-/* سایدبار اصلی کاستومایزر */
 .wp-full-overlay-sidebar {
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
+    background: #2d2e30 !important;
     border-left: 1px solid #5f6368 !important;
 }
-
-/* هدر کاستومایزر */
 .wp-full-overlay-sidebar .wp-full-overlay-header {
     background-color: #2d2e30 !important;
     transition: padding ease-in-out .18s;
     color: #e8eaed !important;
 }
-
-/* بخش بیرونی محتوای سایدبار */
 #customize-sidebar-outer-content {
     position: absolute;
     top: 0;
@@ -932,10 +697,8 @@ table.wc_status_table tr:nth-child(2n) th {
     height: 100%;
     color: #e8eaed !important;
 }
-
-/* نوار بالای اطلاعات کاستومایزر */
 #customize-controls .customize-info .accordion-section-title {
-    background: #3c4043 !important; /* خاکستری تیره */
+    background: #3c4043 !important;
     color: #e8eaed !important;
     border-right: none;
     border-left: none;
@@ -943,13 +706,10 @@ table.wc_status_table tr:nth-child(2n) th {
     cursor: default;
     padding: 10px 14px 11px 10px;
 }
-
-/* هدر پنل انتخاب پوسته در کاستومایزر */
-#customize-theme-controls .control-panel-themes > .accordion-section-title,
-#customize-theme-controls .control-panel-themes > .accordion-section-title:hover {
+#customize-theme-controls .control-panel-themes > .accordion-section-title, #customize-theme-controls .control-panel-themes > .accordion-section-title:hover {
     cursor: default;
-    background: #3c4043 !important;  /* پس‌زمینه تیره */
-    color: #e8eaed !important;        /* متن روشن */
+    background: #3c4043 !important;
+    color: #e8eaed !important;
     border-top: 1px solid #5f6368 !important;
     border-bottom: 1px solid #5f6368 !important;
     border-right: none;
@@ -957,8 +717,6 @@ table.wc_status_table tr:nth-child(2n) th {
     margin: 0 0 15px;
     padding: 12px 15px 15px 100px;
 }
-
-/* دکمه بستن کاستومایزر */
 .customize-controls-close {
     display: block;
     position: absolute;
@@ -967,37 +725,27 @@ table.wc_status_table tr:nth-child(2n) th {
     width: 45px;
     height: 41px;
     padding: 0 0 0 2px;
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
+    background: #2d2e30 !important;
     border: none;
     border-top: 4px solid #2d2e30 !important;
     border-left: 1px solid #5f6368 !important;
-    color: #e8eaed !important; /* متن روشن */
+    color: #e8eaed !important;
     text-align: right;
     cursor: pointer;
     box-sizing: content-box;
 }
-
-/* عناوین آکاردئون در کاستومایزر */
-#customize-outer-theme-controls .accordion-section-title,
-#customize-theme-controls .accordion-section-title {
-    color: #e8eaed !important; /* متن روشن */
-    background-color: #3c4043 !important; /* پس‌زمینه تیره */
+#customize-outer-theme-controls .accordion-section-title, #customize-theme-controls .accordion-section-title {
+    color: #e8eaed !important;
+    background-color: #3c4043 !important;
     border-bottom: 1px solid #5f6368 !important;
     border-right: 4px solid #3c4043 !important;
     transition: .15s color ease-in-out, .15s background-color ease-in-out, .15s border-color ease-in-out;
 }
-
-/* حالت هاور و فوکوس روی دکمه‌های آکاردئون کاستومایزر */
-#customize-controls .control-section .accordion-section-title button:focus,
-#customize-controls .control-section .accordion-section-title button:hover,
-#customize-controls .control-section.open .accordion-section-title,
-#customize-controls .control-section:hover > .accordion-section-title {
-    color: #8ab4f8 !important;           /* آبی ملایم برای دارک مود */
-    background: #3c4043 !important;      /* پس‌زمینه تیره */
+#customize-controls .control-section .accordion-section-title button:focus, #customize-controls .control-section .accordion-section-title button:hover, #customize-controls .control-section.open .accordion-section-title, #customize-controls .control-section:hover > .accordion-section-title {
+    color: #8ab4f8 !important;
+    background: #3c4043 !important;
     border-right-color: #8ab4f8 !important;
 }
-
-/* فوتر کاستومایزر در حالت expanded */
 .expanded .wp-full-overlay-footer {
     position: fixed;
     bottom: 0;
@@ -1007,29 +755,21 @@ table.wc_status_table tr:nth-child(2n) th {
     width: 18%;
     width: calc(18% - 1px);
     height: 45px;
-    border-top: 1px solid #5f6368 !important; /* خط بالایی تیره */
-    background: #2d2e30 !important;           /* پس‌زمینه تیره */
-    color: #e8eaed !important;                /* متن روشن */
+    border-top: 1px solid #5f6368 !important;
+    background: #2d2e30 !important;
+    color: #e8eaed !important;
 }
-
-/* آیکون حالت active در بخش انتخاب دستگاه‌ها */
 .wp-full-overlay-footer .devices button.active:before {
-    color: #e8eaed !important; /* متن/آیکون روشن */
+    color: #e8eaed !important;
 }
-
-/* خط پایین دکمه active */
 .wp-full-overlay-footer .devices button.active {
-    border-bottom-color: #8ab4f8 !important; /* آبی ملایم برای حالت فعال */
+    border-bottom-color: #8ab4f8 !important;
 }
-
-/* پس‌زمینه بخش انتخاب دستگاه‌ها در فوتر کاستومایزر */
 .wp-full-overlay-footer .devices {
     position: relative;
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
-    box-shadow: 20px 0 10px -5px #2d2e30 !important; /* سایه هماهنگ با دارک‌مود */
+    background: #2d2e30 !important;
+    box-shadow: 20px 0 10px -5px #2d2e30 !important;
 }
-
-/* آیکون‌های انتخاب دستگاه‌ها */
 .wp-full-overlay-footer .devices button:before {
     display: inline-block;
     -webkit-font-smoothing: antialiased;
@@ -1037,15 +777,11 @@ table.wc_status_table tr:nth-child(2n) th {
     vertical-align: top;
     margin: 3px 0;
     padding: 4px 8px;
-    color: #e8eaed !important; /* آیکون روشن برای دارک‌مود */
+    color: #e8eaed !important;
 }
-/* ردیف افزونه‌های فعال در لیست افزونه‌ها */
-.plugins .active td,
-.plugins .active th {
-    background-color: #1e2a33 !important; /* پس‌زمینه تیره متمایز */
+.plugins .active td, .plugins .active th {
+    background-color: #1e2a33 !important;
 }
-
-/* پنل لیست فایل‌ها سمت چپ */
 #templateside > ul {
     box-sizing: border-box;
     margin-top: 0;
@@ -1053,28 +789,22 @@ table.wc_status_table tr:nth-child(2n) th {
     padding: 0;
     min-height: 60vh;
     height: calc(100vh - 295px);
-    background-color: #2d2e30 !important; /* پس‌زمینه تیره */
+    background-color: #2d2e30 !important;
     border: 1px solid #5f6368 !important;
     border-right: none;
 }
-
-/* CodeMirror Container */
 .CodeMirror {
     position: relative;
     overflow: hidden;
-    background: #1e1e1e !important; /* پس‌زمینه اصلی تیره */
-    color: #e8eaed !important;       /* متن روشن */
+    background: #1e1e1e !important;
+    color: #e8eaed !important;
     font-family: monospace;
     height: 300px;
     direction: ltr;
 }
-
-/* متن انتخاب‌شده */
 .CodeMirror-selected {
     background: rgba(138, 180, 248, 0.3) !important;
 }
-
-/* شماره خطوط */
 .CodeMirror-gutters {
     background: #2d2e30 !important;
     border-right: 1px solid #5f6368 !important;
@@ -1082,128 +812,94 @@ table.wc_status_table tr:nth-child(2n) th {
 .CodeMirror-linenumber {
     color: #9aa0a6 !important;
 }
-
-/* متن معمولی */
-.cm-s-default .cm-variable,
-.cm-s-default .cm-property {
+.cm-s-default .cm-variable, .cm-s-default .cm-property {
     color: #e8eaed !important;
 }
-
-/* کلمات کلیدی */
 .cm-s-default .cm-keyword {
     color: #c792ea !important;
 }
-
-/* رشته‌ها */
 .cm-s-default .cm-string {
     color: #a8ff60 !important;
 }
-
-/* اعداد */
 .cm-s-default .cm-number {
     color: #f78c6c !important;
 }
-
-/* کامنت‌ها */
 .cm-s-default .cm-comment {
     color: #9aa0a6 !important;
     font-style: italic;
 }
-
-/* تگ‌ها */
 .cm-s-default .cm-tag {
     color: #ff5370 !important;
 }
-
-/* Attribute name */
 .cm-s-default .cm-attribute {
     color: #ffcb6b !important;
 }
-
-/* هایلایت خط فعال */
 .CodeMirror-activeline-background {
     background: rgba(255, 255, 255, 0.05) !important;
 }
-
-/* Highlight کردن bracket matching */
 .CodeMirror-matchingbracket {
     outline: 1px solid #8ab4f8 !important;
     color: #fff !important;
 }
-
-/* کارت‌ها در دارک‌مود */
 .card {
     position: relative;
     margin-top: 20px;
     padding: .7em 2em 1em;
     min-width: 255px;
     max-width: 520px;
-    border: 1px solid #5f6368 !important; /* بوردِر تیره‌تر */
-    box-shadow: 0 1px 3px rgba(0,0,0,.4) !important; /* سایه عمیق‌تر */
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
+    border: 1px solid #5f6368 !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,.4) !important;
+    background: #2d2e30 !important;
     box-sizing: border-box;
-    color: #e8eaed !important; /* متن روشن */
+    color: #e8eaed !important;
 }
-
-/* دکمه افزودن آیکون سایت - دارک‌مود */
 .button-add-site-icon {
     width: 100%;
     cursor: pointer;
     text-align: center;
-    border: 1px dashed #5f6368 !important; /* خط‌چین تیره‌تر */
+    border: 1px dashed #5f6368 !important;
     box-sizing: border-box;
     padding: 9px 0;
     line-height: 1.6;
     max-width: 270px;
     border-radius: 4px;
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
-    color: #e8eaed !important; /* متن روشن */
+    background: #2d2e30 !important;
+    color: #e8eaed !important;
     transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
-
-/* افکت هاور برای وضوح بیشتر */
 .button-add-site-icon:hover {
     background: #38393b !important;
     border-color: #8ab4f8 !important;
     color: #ffffff !important;
 }
-
-/* بخش Optionino در دارک‌مود */
 .optionino-section {
     flex-wrap: wrap;
     padding: 3%;
-    background: #2d2e30 !important; /* پس‌زمینه تیره */
+    background: #2d2e30 !important;
     border-radius: 25px;
     min-height: 600px;
     flex-direction: row-reverse;
     font-family: var(--optionino-main-font) !important;
-    color: #e8eaed !important; /* متن روشن */
-    border: 1px solid #5f6368 !important; /* بوردِر تیره‌تر */
+    color: #e8eaed !important;
+    border: 1px solid #5f6368 !important;
 }
-
-/* هاور یا فوکوس روی بخش‌ها برای جلوه بهتر */
 .optionino-section:hover {
     background: #38393b !important;
 }
-
-/* لیبل‌ها و عناوین */
 .optionino-form-label {
     font-weight: bold;
     display: inline-block;
-    color: #e8eaed !important; /* متن روشن */
+    color: #e8eaed !important;
     font-size: .875rem;
 }
-
 .optionino-title-tab-options {
     font-size: 17px;
     font-weight: 600;
-    color: #ffffff !important; /* سفید برای تیتر تب‌ها */
+    color: #ffffff !important;
 }
-
-/* دکمه‌های تب‌ها در دارک‌مود */
 .optionino-section .tablinks {
     background-color: transparent !important;
-    color: #e8eaed !important; /* متن روشن */
+    color: #e8eaed !important;
     padding: 22px 16px;
     width: 100%;
     border: none;
@@ -1219,14 +915,107 @@ table.wc_status_table tr:nth-child(2n) th {
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
 }
-
-/* افکت هاور و اکتیو */
 .optionino-section .tablinks:hover {
     background-color: #38393b !important;
     border-right: 3px solid #8ab4f8 !important;
 }
-
 .optionino-section .tablinks.active {
     background-color: #3c4043 !important;
     border-right: 3px solid #8ab4f8 !important;
+}
+.plugin-card-bottom {
+    clear: both;
+    padding: 12px 20px;
+    background-color: #2d2e30 !important;
+    border-top: 1px solid #5f6368 !important;
+    overflow: hidden;
+    color: #e8eaed !important;
+}
+.plugin-card-bottom a {
+    color: #8ab4f8 !important;
+}
+.plugin-card-bottom a:hover {
+    color: #aecbfa !important;
+}
+.plugin-card-bottom {
+    clear: both;
+    padding: 12px 20px;
+    background-color: #2d2e30 !important;
+    border-top: 1px solid #5f6368 !important;
+    overflow: hidden;
+    color: #e8eaed !important;
+}
+.plugin-card-bottom a {
+    color: #8ab4f8 !important;
+    text-decoration: none;
+}
+.plugin-card-bottom a:hover {
+    color: #aecbfa !important;
+}
+#plugin-information-content {
+    overflow: hidden;
+    background: #2d2e30 !important;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: calc(100% - 152px);
+    color: #e8eaed !important;
+}
+#plugin-information-tabs {
+    padding: 0 16px;
+    position: relative;
+    left: 0;
+    right: 0;
+    min-height: 36px;
+    font-size: 0;
+    z-index: 1;
+    border-bottom: 1px solid #5f6368 !important;
+    background: #38393b !important;
+}
+#plugin-information-tabs a {
+    color: #e8eaed !important;
+}
+#plugin-information-tabs a:hover {
+    color: #8ab4f8 !important;
+}
+#plugin-information-footer {
+    padding: 13px 16px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+    border-top: 1px solid #5f6368 !important;
+    background: #38393b !important;
+    color: #e8eaed !important;
+}
+#plugin-information-tabs a.current {
+    margin: 0 -1px -1px;
+    background: #2d2e30 !important;
+    border: 1px solid #5f6368 !important;
+    border-bottom-color: #2d2e30 !important;
+    padding-top: 8px;
+    color: #e8eaed !important;
+}
+#plugin-information .fyi {
+    float: left;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 16px 16px 99999px;
+    margin-bottom: -99932px;
+    width: 217px;
+    border-right: 1px solid #5f6368 !important;
+    background: #38393b !important;
+    color: #e8eaed !important;
+}
+#plugin-information .fyi a {
+    color: #8ab4f8 !important;
+}
+#plugin-information .fyi a:hover {
+    color: #aecbfa !important;
+}
+#plugin-information .fyi strong {
+    color: #ffffff !important;
 }
