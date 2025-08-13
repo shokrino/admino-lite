@@ -44,6 +44,17 @@ OPTNNO::set_tab('admnl_option',array(
             'default' => true,
         ),
         array(
+            'id' => 'admin_style_type',
+            'type'    => 'buttonset',
+            'title' => 'نوع استایل پیشخوان',
+            'desc'    => 'کدام استایل برای پیشخوان شما لود شود',
+            'options' => array(
+                'shokrino' => 'استایل شکرینو',
+                'dark' => 'استایل دارک',
+            ),
+            'default' => 'shokrino',
+        ),
+        array(
             'id' => 'login_style',
             'type' => 'switcher',
             'title' => 'نمایش استایل جذاب در صفحه ورود',

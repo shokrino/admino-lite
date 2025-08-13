@@ -49,7 +49,11 @@ if (class_exists('OPTNNO')) {
     }
 
     function adminol_style_dashboard() {
-        wp_enqueue_style('custom_admin_panel_style', ADMNL_ASSETS . '/css/style2.css');
+        if (admnl_options('admin_style_type') == "dark") {
+            wp_enqueue_style('custom_admin_panel_style', ADMNL_ASSETS . '/css/style2.css');
+        } else {
+            wp_enqueue_style('custom_admin_panel_style', ADMNL_ASSETS . '/css/style1.css');
+        }
     }
 
     function adminol_style_dashboard_head() {
