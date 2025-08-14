@@ -18,7 +18,7 @@ class ADMNL_AutoUpdate {
         $remote = get_transient( $this->cache_key );
         if( false === $remote || ! $this->cache_allowed ) {
             $remote = wp_remote_get(
-                'https://shokrino.com/wp-content/uploads/shokrino-products/admino/info.json',
+                'https://shokrino.com/wp-content/uploads/shokrino-products/admino-x842hdiw3/info.json',
                 array(
                     'timeout' => 10,
                     'headers' => array(

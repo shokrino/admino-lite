@@ -5,7 +5,7 @@ Plugin URI:  https://shokrino.com/admino-plugin/
 Description: The easiest , The best and fastest way to make WordPress admin panel and login page beautiful!
 Author:      Shokrino
 Author URI:  https://shokrino.com/admino-plugin/
-Version:     1.0.1
+Version:     1.1.0
 Textdomain:  admino-l
 آموزش برنامه نویسی مشابه همین پلاگین در سایت شکرینو
 */
@@ -31,79 +31,8 @@ if (!class_exists('OPTNNO')) {
     require_once 'inc/optionino-framework/optionino-framework.php';
 }
 if (class_exists('OPTNNO')) {
-    // require_once ADMNL_PATH . 'inc/helpers.php';
-    // require_once ADMNL_PATH . 'inc/MenuEditor.php';
-    // require_once ADMNL_PATH . 'inc/Columns.php';
-    // require_once ADMNL_PATH . 'inc/WhiteLabel.php';
-    // require_once ADMNL_PATH . 'inc/LoginURL.php';
-    // require_once ADMNL_PATH . 'inc/LoginProtect.php';
-    // require_once ADMNL_PATH . 'inc/Captcha.php';
-    // require_once ADMNL_PATH . 'inc/Hardening.php';
-    // require_once ADMNL_PATH . 'inc/SecurityHubPage.php';
 
     require_once 'inc/optionino-config.php';
-
-    // register_activation_hook(__FILE__, function () {
-
-    //     add_option('admino_menu_profile_default', wp_json_encode([
-    //         'order' => ['index.php','edit.php','upload.php'],
-    //         'items' => [],
-    //         'subs'  => [],
-    //     ]), '', false);
-
-    //     add_option('admino_columns', wp_json_encode([
-    //         'posts' => [],
-    //         'tax'   => [],
-    //     ]), '', false);
-
-    //     add_option('admino_whitelabel', wp_json_encode([
-    //         'login_logo' => '',
-    //         'brand_logo_small' => '',
-    //         'footer_text' => '',
-    //         'hide_help' => 0,
-    //         'hide_screen_options' => 0,
-    //         'clean_dashboard' => 0,
-    //         'hide_wp_branding' => 0,
-    //     ]), '', false);
-
-    //     add_option('admino_login_url', wp_json_encode([
-    //         'slug' => 'my-login',
-    //         'block_direct' => 1,
-    //         'allow_lostpassword' => 1,
-    //         'secret_fallback' => '',
-    //     ]), '', false);
-
-    //     add_option('admino_login_protect', wp_json_encode([
-    //         'enabled' => 1,
-    //         'max_attempts' => 5,
-    //         'window_minutes' => 15,
-    //         'lock_minutes' => 30,
-    //         'notify_admin' => 0,
-    //     ]), '', false);
-
-    //     add_option('admino_captcha', wp_json_encode([
-    //         'provider' => 'none',
-    //         'site_key' => '',
-    //         'secret_key' => '',
-    //         'on' => ['login'],
-    //     ]), '', false);
-
-    //     add_option('admino_hardening', wp_json_encode([
-    //         'disable_file_edit' => 1,
-    //         'disable_xmlrpc' => 1,
-    //         'rest_users_block_anon' => 1,
-    //         'remove_wp_version' => 1,
-    //         'disallow_plugin_theme_install' => 0,
-    //     ]), '', false);
-
-    //     flush_rewrite_rules();
-    // });
-
-    // register_deactivation_hook(__FILE__, function () {
-    //     flush_rewrite_rules();
-    // });
-
-
 
     function adminol_load_textdomain() {
         load_plugin_textdomain( 'admino-l', false, basename( dirname( __FILE__ ) ) . '/languages/' );
@@ -135,6 +64,7 @@ if (class_exists('OPTNNO')) {
         <style>
             :root  {
                 --var-admino-lite-color-main: <?php echo $admin_style1_main_color; ?> !important;
+                --optionino-main-color: #6f46bb !important;
             }
         </style>
         <?php
@@ -285,13 +215,49 @@ if (class_exists('OPTNNO')) {
         add_filter('login_display_language_dropdown', 'admnl_login_display_language_dropdown');
         add_filter('enable_login_autofocus', 'admnl_enable_login_autofocus');
     }
-
-    add_filter('use_block_editor_for_post_type', '__return_false', 100);
-    add_filter('use_widgets_block_editor', '__return_false');
-
     if (admnl_options('admin_style_type') == "dark") {
         add_action('admin_init', function() {
             add_editor_style(plugin_dir_url(__FILE__) . 'assets/css/editor-dark.css');
         });
     }
+
+
+    add_action('admin_bar_menu', function($wp_admin_bar) {
+        if (admnl_options('wl_hide_wp') !== "false") {
+            $wp_admin_bar->remove_node('wp-logo');
+        }
+    }, 100);
+
+    
+    add_action('admin_bar_menu', function($wp_admin_bar) {
+        if (admnl_options('wl_add_logo') !== "false") {
+            $logo = esc_url(admnl_options('wl_brand_16'));
+            $url = esc_url(admnl_options('wl_brand_url'));
+            if (!empty($logo)) {
+                $wp_admin_bar->add_node([
+                    'id'    => 'admino-brand',
+                    'title' => '<img src="'.$logo.'" style="height:20px;width:20px;vertical-align:middle;" alt="brand"/>',
+                    'href'  => !empty($url) ? $url : admin_url(),
+                    'meta'  => ['title' => 'Admino']
+                ]);
+            }
+        }
+    }, 1);
+
+    add_action('admin_head', function() {
+        $css = '';
+        if (admnl_options('wl_hide_help') !== "false") {
+            $css .= '#contextual-help-link-wrap{display:none !important;}';
+        }
+        if (admnl_options('wl_hide_screen_options') !== "false") {
+            $css .= '#screen-options-link-wrap{display:none !important;}';
+        }
+        if ($css) echo '<style>'.$css.'</style>';
+    });
+
+    if (admnl_options('classic_editor') !== "false") {
+        add_filter('use_block_editor_for_post_type', '__return_false', 100);
+        add_filter('use_widgets_block_editor', '__return_false');
+    }
+    
 }
